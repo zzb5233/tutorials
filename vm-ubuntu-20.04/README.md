@@ -14,12 +14,12 @@ new VM very often (a couple of times per year?).
 
 + Log in as user p4 (password p4)
 + Click "Upgrade" in the pop-up window asking if you want to upgrade
-  the system, if asked.  This will download the latest Linux Linux
-  kernel version released for Ubuntu 20.04, and other updated
-  packages.
+  the system, if asked.  This will download the latest Linux kernel
+  version released for Ubuntu 20.04, and other updated packages.
 + Reboot the system.
-+ Use `sudo apt purge <list of packages>` to remove older version of
-  Linux kernel, if the upgrade installed a newer one.
++ This is optional, but if you want to save a little disk space, use
+  `sudo apt purge <list of packages>` to remove older version of Linux
+  kernel, if the upgrade installed a newer one.
 + `sudo apt clean`
 
 + Log in as user p4 (password p4)
@@ -49,14 +49,6 @@ new VM very often (a couple of times per year?).
   + Sublime Text
   + Terminal
   + Wireshark
-+ cd tutorials
-  + `git remote add jafingerhut https://github.com/jafingerhut/tutorials`
-  + `git pull jafingerhut`
-  + `git checkout jafingerhut/add-2021-mar-vm-based-on-ubuntu-20.04`
-  + The above commands change to a branch that includes changes for
-    using Python3, and hopefully removes all traces of using Python2.
-    This is relatively new as of March 2021, and there may be bugs
-    remaining to be found.
 + Log off
 
 + Log in as user vagrant (password vagrant)
