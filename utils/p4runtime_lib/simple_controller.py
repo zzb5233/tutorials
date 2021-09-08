@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 #
 # Copyright 2017-present Open Networking Foundation
 #
@@ -19,15 +19,15 @@ import json
 import os
 import sys
 
-import bmv2
-import helper
+from . import bmv2
+from . import helper
 
 
 def error(msg):
-    print >> sys.stderr, ' - ERROR! ' + msg
+    print(' - ERROR! ' + msg, file=sys.stderr)
 
 def info(msg):
-    print >> sys.stdout, ' - ' + msg
+    print(' - ' + msg, file=sys.stdout)
 
 
 class ConfException(Exception):
@@ -165,16 +165,13 @@ def insertTableEntry(sw, flow, p4info_helper):
     sw.WriteTableEntry(table_entry)
 
 
-# object hook for josn library, use str instead of unicode object
-# https://stackoverflow.com/questions/956867/how-to-get-string-objects-instead-of-unicode-from-json
 def json_load_byteified(file_handle):
-    return _byteify(json.load(file_handle, object_hook=_byteify),
-                    ignore_dicts=True)
+    return json.load(file_handle)
 
 
 def _byteify(data, ignore_dicts=False):
     # if this is a unicode string, return its string representation
-    if isinstance(data, unicode):
+    if isinstance(data, str):
         return data.encode('utf-8')
     # if this is a list of values, return list of byteified values
     if isinstance(data, list):
@@ -184,7 +181,7 @@ def _byteify(data, ignore_dicts=False):
     if isinstance(data, dict) and not ignore_dicts:
         return {
             _byteify(key, ignore_dicts=True): _byteify(value, ignore_dicts=True)
-            for key, value in data.iteritems()
+            for key, value in data.items()
         }
     # if it's anything else, return it in its original form
     return data

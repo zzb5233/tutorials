@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # Copyright 2013-present Barefoot Networks, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +45,7 @@ def configureP4Switch(**switch_args):
                 P4RuntimeSwitch.__init__(self, *opts, **kwargs)
 
             def describe(self):
-                print "%s -> gRPC port: %d" % (self.name, self.grpc_port)
+                print("%s -> gRPC port: %d" % (self.name, self.grpc_port))
 
         return ConfiguredP4RuntimeSwitch
     else:
@@ -59,7 +59,7 @@ def configureP4Switch(**switch_args):
                 P4Switch.__init__(self, *opts, **kwargs)
 
             def describe(self):
-                print "%s -> Thrift port: %d" % (self.name, self.thrift_port)
+                print("%s -> Thrift port: %d" % (self.name, self.thrift_port))
 
         return ConfiguredP4Switch
 
@@ -79,7 +79,7 @@ class ExerciseTopo(Topo):
             else:
                 switch_links.append(link)
 
-        for sw, params in switches.iteritems():
+        for sw, params in switches.items():
             if "program" in params:
                 switchClass = configureP4Switch(
                         sw_path=bmv2_exe,
@@ -143,7 +143,7 @@ class ExerciseRunner:
 
     def format_latency(self, l):
         """ Helper method for parsing link latencies from the topology json. """
-        if isinstance(l, (str, unicode)):
+        if isinstance(l, str):
             return l
         else:
             return str(l) + "ms"
@@ -297,7 +297,7 @@ class ExerciseRunner:
             P4Runtime, depending if any command or runtime JSON files were
             provided for the switches.
         """
-        for sw_name, sw_dict in self.switches.iteritems():
+        for sw_name, sw_dict in self.switches.items():
             if 'cli_input' in sw_dict:
                 self.program_switch_cli(sw_name, sw_dict)
             if 'runtime_json' in sw_dict:
@@ -306,7 +306,7 @@ class ExerciseRunner:
     def program_hosts(self):
         """ Execute any commands provided in the topology.json file on each Mininet host
         """
-        for host_name, host_info in self.hosts.items():
+        for host_name, host_info in list(self.hosts.items()):
             h = self.net.get(host_name)
             if "commands" in host_info:
                 for cmd in host_info["commands"]:
