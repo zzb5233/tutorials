@@ -68,7 +68,7 @@ def main():
     iface = 'eth0'
 
     while True:
-        s = str(eval(input('> ')))
+        s = input('> ')
         if s == "quit":
             break
         print(s)
