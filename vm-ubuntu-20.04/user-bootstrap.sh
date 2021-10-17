@@ -288,17 +288,6 @@ Exec=/usr/bin/wireshark
 Comment[en_US]=
 EOF
 
-cat > ${DESKTOP}/Sublime\ Text.desktop << EOF
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Name=Sublime Text
-Name[en_US]=Sublime Text
-Icon=sublime-text
-Exec=/opt/sublime_text/sublime_text
-Comment[en_US]=
-EOF
-
 sudo mkdir -p /home/p4/Desktop
 sudo mv /home/${USER}/Desktop/* /home/p4/Desktop
 sudo chown -R p4:p4 /home/p4/Desktop/

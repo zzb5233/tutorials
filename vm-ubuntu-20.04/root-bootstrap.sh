@@ -3,19 +3,6 @@
 # Print commands and exit on errors
 set -xe
 
-# Sublime 3 install steps came from this page on 2020-May-11:
-# https://www.sublimetext.com/docs/3/linux_repositories.html#apt
-# The commands were modified only to remove 'sudo' from several
-# commands.  sudo is unnecessary here since this entire script is
-# executed as the user root.
-
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
-apt-get install apt-transport-https
-echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
-# These commands are done later below
-#apt-get update
-#apt-get install sublime-text
-
 # Atom install steps came from this page on 2020-May-11:
 # https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux
 
@@ -77,7 +64,6 @@ apt-get install -y --no-install-recommends --fix-missing\
   python3-dev \
   python3-pip \
   python3-setuptools \
-  sublime-text \
   tcpdump \
   unzip \
   valgrind \
