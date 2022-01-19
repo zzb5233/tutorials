@@ -23,7 +23,7 @@ connects four hosts as follow:
                 h1       h2
                  \      /
                   \    /
-                    s1  
+                    s1
                   /    \
                  /      \
                h3        h4
