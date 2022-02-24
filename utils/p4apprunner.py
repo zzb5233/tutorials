@@ -16,11 +16,11 @@
 
 
 import argparse
-from collections import OrderedDict
 import json
 import os
 import sys
 import tarfile
+from collections import OrderedDict
 
 parser = argparse.ArgumentParser(description='p4apprunner')
 parser.add_argument('--build-dir', help='Directory to build in.',

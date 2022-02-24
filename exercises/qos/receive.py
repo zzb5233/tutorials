@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import sys
-from scapy.all import sniff, get_if_list
+
+from scapy.all import sniff
 
 
 def handle_pkt(pkt):

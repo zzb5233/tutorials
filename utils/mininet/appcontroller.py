@@ -2,6 +2,7 @@ import subprocess
 
 from shortest_path import ShortestPath
 
+
 class AppController:
 
     def __init__(self, manifest=None, target=None, topo=None, net=None, links=None):

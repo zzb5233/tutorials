@@ -19,10 +19,9 @@ import json
 import os
 import sys
 
-from . import bmv2
-from . import helper
-
 from p4.config.v1 import p4info_pb2
+
+from . import bmv2, helper
 
 
 def error(msg):

@@ -2,11 +2,9 @@
 
 import argparse
 import socket
-
-from scapy.all import sendp, send, hexdump, get_if_list, get_if_hwaddr
-from scapy.all import Ether, IP, UDP, TCP
-
 from time import sleep
+
+from scapy.all import IP, TCP, UDP, Ether, get_if_hwaddr, get_if_list, sendp
 
 
 def get_if():

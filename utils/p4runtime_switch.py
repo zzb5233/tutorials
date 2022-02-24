@@ -14,15 +14,16 @@
 # limitations under the License.
 #
 
-import sys, os, tempfile, socket
+import os
+import tempfile
 from time import sleep
 
-from mininet.node import Switch
+from mininet.log import debug, error, info
 from mininet.moduledeps import pathCheck
-from mininet.log import info, error, debug
-
-from p4_mininet import P4Switch, SWITCH_START_TIMEOUT
+from mininet.node import Switch
 from netstat import check_listening_on_port
+from p4_mininet import SWITCH_START_TIMEOUT, P4Switch
+
 
 class P4RuntimeSwitch(P4Switch):
     "BMv2 switch with gRPC support"

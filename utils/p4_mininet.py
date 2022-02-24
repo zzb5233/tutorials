@@ -13,16 +13,14 @@
 # limitations under the License.
 #
 
-from mininet.net import Mininet
-from mininet.node import Switch, Host
-from mininet.log import setLogLevel, info, error, debug
-from mininet.moduledeps import pathCheck
-from sys import exit
 import os
 import tempfile
-import socket
+from sys import exit
 from time import sleep
 
+from mininet.log import debug, error, info
+from mininet.moduledeps import pathCheck
+from mininet.node import Host, Switch
 from netstat import check_listening_on_port
 
 SWITCH_START_TIMEOUT = 10 # seconds

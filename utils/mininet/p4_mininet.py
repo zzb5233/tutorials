@@ -13,15 +13,16 @@
 # limitations under the License.
 #
 
-from mininet.net import Mininet
-from mininet.node import Switch, Host
-from mininet.log import setLogLevel, info, error, debug
-from mininet.moduledeps import pathCheck
+import os
+import socket
+import tempfile
 from sys import exit
 from time import sleep
-import os
-import tempfile
-import socket
+
+from mininet.log import debug, error, info
+from mininet.moduledeps import pathCheck
+from mininet.node import Host, Switch
+
 
 class P4Host(Host):
     def config(self, **params):

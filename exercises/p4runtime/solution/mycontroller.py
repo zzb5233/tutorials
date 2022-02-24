@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import argparse
-import grpc
 import os
 import sys
 from time import sleep
+
+import grpc
 
 # Import P4Runtime lib from parent utils dir
 # Probably there's a better way of doing this.
@@ -11,8 +12,8 @@ sys.path.append(
     os.path.join(os.path.dirname(os.path.abspath(__file__)),
                  '../../utils/'))
 import p4runtime_lib.bmv2
-from p4runtime_lib.switch import ShutdownAllSwitchConnections
 import p4runtime_lib.helper
+from p4runtime_lib.switch import ShutdownAllSwitchConnections
 
 SWITCH_TO_HOST_PORT = 1
 SWITCH_TO_SWITCH_PORT = 2

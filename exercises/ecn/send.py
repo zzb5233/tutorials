@@ -1,18 +1,11 @@
 #!/usr/bin/env python3
 
-import argparse
-import sys
 import socket
-import random
-import struct
-
-from scapy.all import sendp, send, hexdump, get_if_list, get_if_hwaddr
-from scapy.all import Packet, IPOption
-from scapy.all import Ether, IP, UDP
-from scapy.all import IntField, FieldListField, FieldLenField, ShortField
-from scapy.layers.inet import _IPOption_HDR
-
+import sys
 from time import sleep
+
+from scapy.all import IP, UDP, Ether, get_if_hwaddr, get_if_list, sendp
+
 
 def get_if():
     ifs=get_if_list()

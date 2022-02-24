@@ -15,16 +15,15 @@
 # limitations under the License.
 #
 
-from mininet.net import Mininet
-from mininet.topo import Topo
-from mininet.log import setLogLevel, info
-from mininet.cli import CLI
-
-from p4_mininet import P4Switch, P4Host
-
 import argparse
 from subprocess import PIPE, Popen
 from time import sleep
+
+from mininet.cli import CLI
+from mininet.log import setLogLevel
+from mininet.net import Mininet
+from mininet.topo import Topo
+from p4_mininet import P4Host, P4Switch
 
 parser = argparse.ArgumentParser(description='Mininet demo')
 parser.add_argument('--behavioral-exe', help='Path to behavioral executable',

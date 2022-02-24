@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 
-import argparse
-import sys
-import socket
-import random
-import struct
 import re
 
-from scapy.all import sendp, send, srp1
-from scapy.all import Packet, hexdump
-from scapy.all import Ether, StrFixedLenField, XByteField, IntField
-from scapy.all import bind_layers
-import readline
+from scapy.all import (
+    Ether,
+    IntField,
+    Packet,
+    StrFixedLenField,
+    XByteField,
+    bind_layers,
+    srp1
+)
+
 
 class P4calc(Packet):
     name = "P4calc"
@@ -84,7 +84,7 @@ def main():
             if resp:
                 p4calc=resp[P4calc]
                 if p4calc:
-                    print((p4calc.result))
+                    print(p4calc.result)
                 else:
                     print("cannot find P4calc header in the packet")
             else:

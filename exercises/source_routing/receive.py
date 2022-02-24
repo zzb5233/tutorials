@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 import sys
-import struct
 
-from scapy.all import sniff, sendp, hexdump, get_if_list, get_if_hwaddr, bind_layers
-from scapy.all import Packet, IPOption
-from scapy.all import IP, UDP, Raw, Ether
-from scapy.layers.inet import _IPOption_HDR
+from scapy.all import Ether, IPOption, Packet, bind_layers, get_if_list, sniff
 from scapy.fields import *
+from scapy.layers.inet import _IPOption_HDR
+
 
 def get_if():
     ifs=get_if_list()

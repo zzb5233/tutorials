@@ -1,5 +1,6 @@
 from mininet.topo import Topo
 
+
 class AppTopo(Topo):
 
     def __init__(self, links, latencies={}, manifest=None, target=None,
