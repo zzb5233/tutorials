@@ -101,17 +101,17 @@ class P4InfoHelper(object):
             exact = p4runtime_match.exact
             exact.value = encode(value, bitwidth)
         elif match_type == p4info_pb2.MatchField.LPM:
-            lpm = p4runtime_match.lpm
-            lpm.value = encode(value[0], bitwidth)
-            lpm.prefix_len = value[1]
+            lpm_entry = p4runtime_match.lpm
+            lpm_entry.value = encode(value[0], bitwidth)
+            lpm_entry.prefix_len = value[1]
         elif match_type == p4info_pb2.MatchField.TERNARY:
-            lpm = p4runtime_match.ternary
-            lpm.value = encode(value[0], bitwidth)
-            lpm.mask = encode(value[1], bitwidth)
+            ternary_entry = p4runtime_match.ternary
+            ternary_entry.value = encode(value[0], bitwidth)
+            ternary_entry.mask = encode(value[1], bitwidth)
         elif match_type == p4info_pb2.MatchField.RANGE:
-            lpm = p4runtime_match.range
-            lpm.low = encode(value[0], bitwidth)
-            lpm.high = encode(value[1], bitwidth)
+            range_entry = p4runtime_match.range
+            range_entry.low = encode(value[0], bitwidth)
+            range_entry.high = encode(value[1], bitwidth)
         else:
             raise Exception("Unsupported match type with type %r" % match_type)
         return p4runtime_match

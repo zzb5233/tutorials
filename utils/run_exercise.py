@@ -273,7 +273,9 @@ class ExerciseRunner:
                 device_id=device_id,
                 sw_conf_file=sw_conf_file,
                 workdir=os.getcwd(),
-                proto_dump_fpath=outfile)
+                proto_dump_fpath=outfile,
+                runtime_json=runtime_json
+            )
 
     def program_switch_cli(self, sw_name, sw_dict):
         """ This method will start up the CLI and use the contents of the
