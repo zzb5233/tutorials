@@ -264,7 +264,7 @@ def run_stf(manifest):
 
 def run_custom(manifest):
     output_file = run_compile_bmv2(manifest)
-    python_path = 'PYTHONPATH=$PYTHONPATH:/scripts/mininet/'    
+    python_path = 'PYTHONPATH=$PYTHONPATH:/scripts/mininet/'
     script_args = []
     script_args.append('--behavioral-exe "%s"' % 'simple_switch')
     script_args.append('--json "%s"' % output_file)

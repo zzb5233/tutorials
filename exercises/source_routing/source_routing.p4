@@ -60,7 +60,7 @@ parser MyParser(packet_in packet,
                 inout metadata meta,
                 inout standard_metadata_t standard_metadata) {
 
-    
+
     state start {
         transition parse_ethernet;
     }
@@ -96,7 +96,7 @@ parser MyParser(packet_in packet,
 ************   C H E C K S U M    V E R I F I C A T I O N   *************
 *************************************************************************/
 
-control MyVerifyChecksum(inout headers hdr, inout metadata meta) {   
+control MyVerifyChecksum(inout headers hdr, inout metadata meta) {
     apply {  }
 }
 
@@ -112,10 +112,10 @@ control MyIngress(inout headers hdr,
     action drop() {
         mark_to_drop(standard_metadata);
     }
-    
+
     action srcRoute_nhop() {
         /*
-         * TODO: set standard_metadata.egress_spec 
+         * TODO: set standard_metadata.egress_spec
          * to the port in hdr.srcRoutes[0] and
          * pop an entry from hdr.srcRoutes
          */
@@ -128,7 +128,7 @@ control MyIngress(inout headers hdr,
     action update_ttl(){
         hdr.ipv4.ttl = hdr.ipv4.ttl - 1;
     }
-    
+
     apply {
         if (hdr.srcRoutes[0].isValid()){
             /*
@@ -143,7 +143,7 @@ control MyIngress(inout headers hdr,
             }
         }else{
             drop();
-        } 
+        }
     }
 }
 

@@ -34,7 +34,7 @@ syn keyword p4ObjectAttributeKeyword  counters meters
 syn keyword p4ObjectKeyword           const in out inout
 
 
-syn keyword p4Annotation              @name @tableonly @defaultonly 
+syn keyword p4Annotation              @name @tableonly @defaultonly
 syn keyword p4Annotation              @globalname @atomic @hidden
 
 
@@ -53,7 +53,7 @@ syn keyword p4Type           bit bool int varbit void error
 
 " Integer Literals
 
-syn match   p4Int            '[0-9][0-9_]*'  
+syn match   p4Int            '[0-9][0-9_]*'
 syn match   p4Indentifier    '[A-Za-z_][A-Za-z0-9_]*'
 syn match   p4HexadecimalInt '0[Xx][0-9a-fA-F]\+'
 syn match   p4DecimalInt     '0[dD][0-9_]\+'
@@ -72,7 +72,7 @@ syn keyword p4Primitive     isValid setValid setInvalid
 syn keyword p4Primitive     hit action_run
 " Packet_in methods
 syn keyword p4Primitive     extract lookahead advance length
-" Packet_out methods  
+" Packet_out methods
 syn keyword p4Primitive     emit
 " Known parser states
 syn keyword p4Primitive     accept reject
@@ -91,7 +91,7 @@ syn keyword p4Constant      OverwritingHeader HeaderTooShort ParserTiimeout
 " Boolean
 syn keyword p4Boolean       false true
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Apply highlight groups to syntax groups defined above
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet

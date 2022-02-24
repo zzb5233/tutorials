@@ -3,7 +3,7 @@
 # Print script commands and exit on errors.
 set -xe
 
-#Src 
+#Src
 BMV2_COMMIT="b447ac4c0cfd83e5e72a3cc6120251c1e91128ab"  # August 10, 2019
 PI_COMMIT="41358da0ff32c94fa13179b9cee0ab597c9ccbcc"    # August 10, 2019
 P4C_COMMIT="69e132d0d663e3408d740aaf8ed534ecefc88810"   # August 10, 2019
@@ -128,7 +128,7 @@ sudo ln -s /usr/share/emacs/site-lisp/p4_16-mode.el /home/p4/.emacs.d/p4_16-mode
 sudo chown -R p4:p4 /home/p4/.emacs.d/
 
 # --- Vim --- #
-cd ~  
+cd ~
 mkdir .vim
 cd .vim
 mkdir ftdetect

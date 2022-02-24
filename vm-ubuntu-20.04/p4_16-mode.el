@@ -29,19 +29,19 @@
 ;; Syntactic HighLighting
 
 ;; Main keywors (declarations and operators)
-(setq p4_16-keywords 
+(setq p4_16-keywords
       '("action" "apply"
         "control"
-        "default" 
+        "default"
         "else" "enum" "extern" "exit"
         "header" "header_union"
         "if"
         "match_kind"
-        "package" "parser" 
+        "package" "parser"
         "return"
         "select" "state" "struct" "switch"
         "table"  "transition" "tuple" "typedef"
-        "verify" 
+        "verify"
         ))
 
 (setq p4_16-annotations
@@ -50,7 +50,7 @@
 
 (setq p4_16-attributes
       '("const" "in" "inout" "out"
-        ;; Tables 
+        ;; Tables
         "key" "actions" "default_action" "entries" "implementation"
         "counters" "meters"
         ))
@@ -97,7 +97,7 @@
         ))
 
 (setq p4_16-cpp
-      '("#include" 
+      '("#include"
         "#define" "#undef"
         "#if" "#ifdef" "#ifndef"
         "#elif" "#else"
@@ -209,7 +209,7 @@
   (set-syntax-table p4_16-mode-syntax-table)
   (use-local-map p4_16-mode-map)
   (set (make-local-variable 'font-lock-defaults) '(p4_16-font-lock-keywords))
-  (set (make-local-variable 'indent-line-function) 'p4_16-indent-line)  
+  (set (make-local-variable 'indent-line-function) 'p4_16-indent-line)
   (setq major-mode 'p4_16-mode)
   (setq mode-name "P4_16")
   (setq imenu-generic-expression p4_16-imenu-generic-expression)

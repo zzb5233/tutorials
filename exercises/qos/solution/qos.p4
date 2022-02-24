@@ -207,9 +207,9 @@ control MyIngress(inout headers hdr,
         if (hdr.ipv4.isValid()) {
             if (hdr.ipv4.protocol == IP_PROTOCOLS_UDP) {
                 expedited_forwarding();
-	    }
+            }
             else if (hdr.ipv4.protocol == IP_PROTOCOLS_TCP) {
-	        voice_admit();
+                voice_admit();
             }
             ipv4_lpm.apply();
         }
@@ -232,12 +232,12 @@ control MyEgress(inout headers hdr,
 
 control MyComputeChecksum(inout headers hdr, inout metadata meta) {
      apply {
-	update_checksum(
-	    hdr.ipv4.isValid(),
+        update_checksum(
+            hdr.ipv4.isValid(),
             { hdr.ipv4.version,
-	      hdr.ipv4.ihl,
-	      hdr.ipv4.diffserv,
-	      hdr.ipv4.ecn,
+              hdr.ipv4.ihl,
+              hdr.ipv4.diffserv,
+              hdr.ipv4.ecn,
               hdr.ipv4.totalLen,
               hdr.ipv4.identification,
               hdr.ipv4.flags,

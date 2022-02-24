@@ -31,7 +31,7 @@ you get started with P4 programming, organized into several modules:
 * [Firewall](./exercises/firewall)
 * [Link Monitoring](./exercises/link_monitor)
 
-## Presentation 
+## Presentation
 
 The slides are available [online](http://bit.ly/p4d2-2018-spring) and
 in the P4_tutorial.pdf in the tutorial directory.
@@ -46,7 +46,7 @@ The documentation for P4_16 and P4Runtime is available [here](https://p4.org/spe
 All excercises in this repository use the v1model architecture, the documentation for which is available at:
 1. The BMv2 Simple Switch target document accessible [here](https://github.com/p4lang/behavioral-model/blob/master/docs/simple_switch.md) talks mainly about the v1model architecture.
 2. The include file `v1model.p4` has extensive comments and can be accessed [here](https://github.com/p4lang/p4c/blob/master/p4include/v1model.p4).
-        
+
 ## Obtaining required software
 
 If you are starting this tutorial at one of the proctored tutorial events,

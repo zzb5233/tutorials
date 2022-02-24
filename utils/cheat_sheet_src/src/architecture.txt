@@ -3,7 +3,7 @@ extern void truncate(in bit<32> length);
 extern void resubmit<T>(in T x);
 extern void recirculate<T>(in T x);
 enum CloneType { I2E, E2I }
-extern void clone(in CloneType type, 
+extern void clone(in CloneType type,
                   in bit<32> session);
 
 // v1model pipeline elements
@@ -26,7 +26,7 @@ control Egress<H, M>(
   inout H hdr,
   inout M meta,
   inout standard_metadata_t std_meta
-);                      
+);
 control ComputeChecksum<H, M>(
   inout H hdr,
   inout M meta

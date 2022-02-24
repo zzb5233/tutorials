@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this exercise, we will be using P4Runtime to send flow entries to the 
+In this exercise, we will be using P4Runtime to send flow entries to the
 switch instead of using the switch's CLI. We will be building on the same P4
 program that you used in the [basic_tunnel](../basic_tunnel) exercise. The
 P4 program has been renamed to `advanced_tunnel.p4` and has been augmented
 with two counters (`ingressTunnelCounter`, `egressTunnelCounter`) and
 two new actions (`myTunnel_ingress`, `myTunnel_egress`).
- 
+
 You will use the starter program, `mycontroller.py`, and a few helper
 libraries in the `p4runtime_lib` directory to create the table entries
 necessary to tunnel traffic between host 1 and 2.
@@ -43,7 +43,7 @@ are working as expected.
    ```
    Because there are no rules on the switches, you should **not** receive any
    replies yet. You should leave the ping running in this shell.
-   
+
 3. Open another shell and run the starter code:
    ```bash
    cd ~/tutorials/exercises/p4runtime
@@ -56,7 +56,7 @@ are working as expected.
    ```
     s1 ingressTunnelCounter 100: 2 packets
    ```
-   The other counters should remain at zero. 
+   The other counters should remain at zero.
 
 4. Press `Ctrl-C` to the second shell to stop `mycontroller.py`
 
@@ -145,11 +145,11 @@ you will just need to run the following in your second shell:
 You should start to see ICMP replies in your Mininet prompt, and you should start to
 see the values for all counters start to increment.
 
-### Extra Credit and Food for Thought 
+### Extra Credit and Food for Thought
 
 You might notice that the rules that are printed by `mycontroller.py` contain the entity
 IDs rather than the table names. You can use the P4Info helper to translate these IDs
-into entry names. 
+into entry names.
 
 Also, you may want to think about the following:
 - What assumptions about the topology are baked into your implementation? How would you

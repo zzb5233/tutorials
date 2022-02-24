@@ -1,7 +1,7 @@
 table ipv4_lpm {
   key = {
     hdr.ipv4.dstAddr : lpm;
-    // standard match kinds: 
+    // standard match kinds:
     // exact, ternary, lpm
   }
   // actions that can be invoked
