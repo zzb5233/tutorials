@@ -4,7 +4,7 @@
 set -xe
 
 # --- Mininet --- #
-git clone git://github.com/mininet/mininet mininet
+git clone https://github.com/mininet/mininet mininet
 cd mininet
 PATCH_DIR="${HOME}/patches"
 patch -p1 < "${PATCH_DIR}/mininet-dont-install-python2.patch" || echo "Errors while attempting to patch mininet, but continuing anyway ..."
