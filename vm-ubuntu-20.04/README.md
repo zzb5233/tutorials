@@ -1,19 +1,23 @@
 # Creating the VM
 
 Start creating a brand new VM by running `vagrant up` in this
-directory (install vagrant on your system if needed). This command
-would create a _release_ VM that includes P4 software installed from
-packages and allows to update it with `apt upgrade`. Alternatively,
-a development VM can be created by running `vagrant up dev`.
-Note that creating a development VM can take one to several hours,
-depending upon the speed of your computer and Internet connection.
+directory (install Vagrant on your system if needed). This command
+creates a _release_ VM that includes P4 software installed from
+pre-compiled packages and allows to update those packages with `apt
+upgrade`.
 
-Steps taken to prepare a VM _after_ running `vagrant up` on the host
-OS.  Some of these could probably be automated with programs, and
-changes to the `vagrant up` scripts that can do so are welcome.  I did
-them manually to create a VM image simply to avoid the experimentation
-and time required to automate them, since I do not expect to create a
-new VM very often (a couple of times per year?).
+Alternatively, a development VM can be created by running `vagrant up
+dev`.  Note that creating a development VM can take one to several
+hours, depending upon the speed of your computer and Internet
+connection.
+
+Below are steps that were performed _after_ one of the commands above
+was run on the host OS, before creating the VM images.  Some of these
+steps could probably be automated with programs, and changes to the
+`vagrant` scripts that can do so are welcome.  I performed these steps
+manually to create a VM image, simply to avoid the experimentation and
+time required to automate them.  I typically only create new VM images
+once per month.
 
 + Log in as user p4 (password p4)
 + Click "Upgrade" in the pop-up window asking if you want to upgrade
@@ -64,12 +68,30 @@ new VM very often (a couple of times per year?).
 
 # Notes on test results for the VM
 
+I have run the tests below on every VM image I release, before
+releasing it.  You need not run them again, unless you are curious how
+to do so.
+
+
 ## p4c testing results
 
 Steps to run the p4c tests:
 
 + Log in as user vagrant (password vagrant)
 + In a new terminal, execute these commands:
+
+If you are testing on a Release VM image, first get a copy of the p4c
+source code using the following command.  This is unnecessary with a
+Development VM image, as there is already a `p4c` directory with the
+version of source code used to create that image already included in
+the home directory of the `vagrant` user account:
+
+```bash
+# git clone --recursive https://github.com/p4lang/p4c
+```
+
+The following steps are common for both Release and Development VM
+images:
 
 ```bash
 # Compile p4c again from source, since the clean.sh step reduced disk
@@ -83,16 +105,12 @@ cd build
 make -j2 check |& tee make-check-out.txt
 ```
 
-As of 2021-09-07, the p4c compiler passes all but 61 of its included
+As of 2022-04-02, the p4c compiler passes all but 64 of its included
 tests.
 
-The test named cpplint fails because Python2 is not installed on the
-system.  Omitting Python2 is intentional for this VM.  The cpplint
-test passes fine on other systems that have Python2 installed.
-
-There are 60 tests whose names begin with 'ebpf' and 'ubpf' that fail.
-They work fine in the continuous integration tests on the
-https://github.com/p4lang/p4c project, because the VM used to run
+The relatively small group of tests whose names begin with 'ebpf' and
+'ubpf' fail.  They work fine in the continuous integration tests on
+the https://github.com/p4lang/p4c project, because the VM used to run
 those tests has additional software installed to enable it.  Perhaps
 future versions of this VM will enable the ebpf and ubpf back ends to
 pass these tests, also.  Contributions are welcome to the needed
@@ -101,9 +119,9 @@ changes in the VM build scripts to enable this.
 
 ## Send ping packets in the solution to `basic` exercise of `p4lang/tutorials` repository
 
-With the branch of the p4lang/tutorials repository included with this
-VM, the following tests pass.  More testing and/or bug fixes is
-welcome here.
+With the version of the https://github.com/p4lang/tutorials repository
+that comes pre-installed in the `p4` user account of this VM, the
+following tests pass.
 
 First log in as the user `p4` (password `p4`) and open a terminal
 window.
@@ -128,19 +146,28 @@ $ make stop
 
 # Creating a single file image of the VM
 
-For the particular case of creating the VM named 'P4 Tutorial
-2021-09-07' on September 7, 2021, here were the host OS details, in
-case it turns out that matters to the finished VM image for some
-reason:
+These notes are primarily here as a reminder for people creating VM
+images for distribution.  If you downloaded a VM image, these steps
+were already performed, and there is no reason you need to perform
+them again.
 
-+ macOS 10.14.6
-+ VirtualBox 6.1.26 r145957
-+ Vagrant 2.2.16
+For the particular case of creating the VM named:
+
++ 'P4 Tutorial Development 2022-04-02'
++ created on April 2, 2022
+
+here were the host OS details, in case it turns out that matters to
+the finished VM image for some reason:
+
++ Windows 10 Enterprise
++ VirtualBox 6.1.30 r148432
++ Vagrant 2.2.18
 
 In the VirtualBox GUI interface:
 
 + Choose menu item File -> Export Appliance ...
-+ Select the VM named 'P4 Tutorial 2021-09-07' and click Continue button
++ Select the VM named 'P4 Tutorial Development 2022-04-02' and click
+  Continue button
 
 + Format
   + I used: Open Virtualization Format 1.0
@@ -148,7 +175,7 @@ In the VirtualBox GUI interface:
     + Open Virtualization Format 0.9
     + Open Virtualization Format 2.0
 + Target file
-  + I used: /Users/andy/Documents/P4 Tutorial 2021-09-07.ova
+  + I used: /Users/andy/Documents/P4 Tutorials Development 2022-04-02.ova
 + Mac Address Policy
   + I used: Include only NAT network adapter MAC addresses
   + Other available options were:
@@ -162,16 +189,16 @@ Clicked "Continue" button.
 
 Virtual system settings:
 
-+ Name: P4 Tutorial 2021-09-07
++ Name: P4 Tutorial 2022-04-02
 + Product: I left this blank
 + Product-URL: I left this blank
 + Vendor: P4.org - P4 Language Consortium
 + Vendor-URL: https://p4.org
-+ Version: 2021-09-07
++ Version: 2022-04-02
 + Description:
 
 ```
-Open source P4 development tools built from latest source code as of 2021-Sep-07 and packaged into an Ubuntu 20.04 Desktop Linux VM for the AMD64 architecture.
+Open source P4 development tools built from latest source code as of 2022-Apr-02 and packaged into an Ubuntu 20.04 Desktop Linux VM for the AMD64 architecture.
 ```
 
 + License
