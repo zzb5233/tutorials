@@ -4,10 +4,10 @@
 set -xe
 
 #Src
-BMV2_COMMIT="434eda7658c2fd8a8e31500e98dab9e7c1e1b0ca"  # 2022-Apr-02
-PI_COMMIT="f547455a260b710706bef82afab4cb9937bac416"    # 2022-Apr-02
-P4C_COMMIT="e1ce01b12918163570fe2c8e70a41d21ec0ca15f"   # 2022-Apr-02
-PTF_COMMIT="8140532764fff58b40d0c5c995f058a6e1b36a55"   # 2022-Apr-02
+BMV2_COMMIT="f16d0de3486aa7fb2e1fe554aac7d237cc1adc33"  # 2022-May-01
+PI_COMMIT="f547455a260b710706bef82afab4cb9937bac416"    # 2022-May-01
+P4C_COMMIT="1471fdd22b683e1946b7730d83c877d94daba683"   # 2022-May-01
+PTF_COMMIT="405513bcad2eae3092b0ac4ceb31e8dec5e32311"   # 2022-May-01
 PROTOBUF_COMMIT="v3.6.1"
 GRPC_COMMIT="tags/v1.17.2"
 
@@ -171,24 +171,15 @@ find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-4-after-PI.txt
 git clone https://github.com/p4lang/behavioral-model.git
 cd behavioral-model
 git checkout ${BMV2_COMMIT}
-PATCH_DIR="${HOME}/patches"
-patch -p1 < "${PATCH_DIR}/behavioral-model-use-correct-libssl-pkg.patch" || echo "Errors while attempting to patch behavioral-model, but continuing anyway ..."
 ./install_deps.sh
 ./autogen.sh
-./configure --enable-debugger --with-pi
+./configure --enable-debugger --with-pi --with-thrift
 make -j${NUM_CORES}
-sudo make install
-sudo ldconfig
-# Simple_switch_grpc target
-cd targets/simple_switch_grpc
-./autogen.sh
-./configure --with-thrift
-make -j${NUM_CORES}
-sudo make install
+sudo make install-strip
 sudo ldconfig
 # install-p4dev-v4.sh script does this here:
 move_usr_local_lib_python3_from_site_packages_to_dist_packages
-cd ../../..
+cd ..
 
 find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-5-after-behavioral-model.txt
 
