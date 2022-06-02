@@ -161,8 +161,8 @@ need to change it for a more realistic network?
 Hint: The default TTL is 64 for packets sent by the hosts.
 
 If you are interested, you can find the protocol buffer and gRPC definitions here:
-- [P4Runtime](https://github.com/p4lang/PI/blob/master/proto/p4/p4runtime.proto)
-- [P4Info](https://github.com/p4lang/PI/blob/master/proto/p4/config/p4info.proto)
+- [P4Runtime](https://github.com/p4lang/p4runtime/blob/main/proto/p4/v1/p4runtime.proto)
+- [P4Info](https://github.com/p4lang/p4runtime/blob/main/proto/p4/config/v1/p4info.proto)
 
 #### Cleaning up Mininet
 
