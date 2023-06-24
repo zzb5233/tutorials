@@ -42,4 +42,4 @@ apt-get install -qq -y --no-install-recommends --fix-missing\
   p4lang-bmv2 \
   p4lang-pi
 
-sudo pip3 install -U scapy ipaddr ptf psutil grpcio
+sudo pip3 install -U scapy ptf psutil grpcio

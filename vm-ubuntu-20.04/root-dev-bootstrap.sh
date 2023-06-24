@@ -121,16 +121,6 @@ sudo pip3 install protobuf==3.6.1
 # p4c/build ; make check` to succeed.
 # ply package is needed for ebpf and ubpf backend tests to pass
 sudo pip3 install scapy ply
-# Earlier versions of this script installed the Ubuntu package
-# python-ipaddr.  However, that no longer exists in Ubuntu 20.04.  PIP
-# for Python3 can install the ipaddr module, which is good enough to
-# enable two of p4c's many tests to pass, tests that failed if the
-# ipaddr Python3 module is not installed, in my testing on
-# 2020-Oct-17.  From the Python stack trace that appears when running
-# those failing tests, the code that requires this module is in
-# behavioral-model's runtime_CLI.py source file, in a function named
-# ipv6Addr_to_bytes.
-sudo pip3 install ipaddr
 
 # Things needed for PTF
 sudo pip3 install pypcap
