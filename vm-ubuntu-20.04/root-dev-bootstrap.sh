@@ -119,7 +119,8 @@ sudo pip3 install protobuf==3.6.1
 
 # Starting in 2019-Nov, Python3 version of Scapy is needed for `cd
 # p4c/build ; make check` to succeed.
-sudo pip3 install scapy
+# ply package is needed for ebpf and ubpf backend tests to pass
+sudo pip3 install scapy ply
 # Earlier versions of this script installed the Ubuntu package
 # python-ipaddr.  However, that no longer exists in Ubuntu 20.04.  PIP
 # for Python3 can install the ipaddr module, which is good enough to
