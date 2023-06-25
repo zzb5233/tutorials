@@ -72,11 +72,6 @@ apt-get install -y --no-install-recommends --fix-missing\
   xcscope-el \
   xterm
 
-# TBD: Should these packages be installed via apt-get ?  They are in
-# my install-p4dev-v4.sh script, but they might not be needed, either.
-
-# zlib1g-dev18
-
 # On a freshly installed Ubuntu 20.04.1 or 18.04.5 system, desktop
 # amd64 minimal installation, the Debian package python3-protobuf is
 # installed.  This is depended upon by another package called
@@ -115,7 +110,7 @@ apt-get install -y --no-install-recommends --fix-missing\
 # At that point, attempting to import any of the 3 modules above gave NO error.
 
 sudo apt-get purge -y python3-protobuf || echo "Failed to remove python3-protobuf, probably because there was no such package installed"
-sudo pip3 install protobuf==3.6.1
+sudo pip3 install protobuf==3.18.1
 
 # Starting in 2019-Nov, Python3 version of Scapy is needed for `cd
 # p4c/build ; make check` to succeed.

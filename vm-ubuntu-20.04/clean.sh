@@ -11,13 +11,9 @@
 DF1_BEFORE=`df -h .`
 DF2_BEFORE=`df -BM .`
 
-cd protobuf
-make clean
-cd ..
-
-cd grpc
-make clean
-cd ..
+# Remove protobuf and grpc sources completely, since they are large
+# and easily downloadable.
+/bin/rm -fr protobuf grpc
 
 cd behavioral-model
 make clean

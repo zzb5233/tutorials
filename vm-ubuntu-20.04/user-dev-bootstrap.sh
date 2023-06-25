@@ -4,12 +4,12 @@
 set -xe
 
 #Src
-BMV2_COMMIT="f16d0de3486aa7fb2e1fe554aac7d237cc1adc33"  # 2022-May-01
-PI_COMMIT="f547455a260b710706bef82afab4cb9937bac416"    # 2022-May-01
-P4C_COMMIT="1471fdd22b683e1946b7730d83c877d94daba683"   # 2022-May-01
-PTF_COMMIT="405513bcad2eae3092b0ac4ceb31e8dec5e32311"   # 2022-May-01
-PROTOBUF_COMMIT="v3.6.1"
-GRPC_COMMIT="tags/v1.17.2"
+BMV2_COMMIT="1c44f6d79c4d99e9c68789973b5ea08a1580ae7d"  # 2023-Jun-24
+PI_COMMIT="25e218b1b91cb083d51039118c9df469b842e8f9"    # 2023-Jun-24
+P4C_COMMIT="0d3dcd626ddbfdf1f5618ff84ecb1e34346c7134"   # 2023-Jun-24
+PTF_COMMIT="d2e2d8ad005a451ad11f9d21af50079a0552921a"   # 2023-Jun-24
+PROTOBUF_COMMIT="v3.18.1"
+GRPC_COMMIT="tags/v1.43.2"
 
 #Get the number of cores to speed up the compilation process
 NUM_CORES=`grep -c ^processor /proc/cpuinfo`
@@ -96,11 +96,12 @@ move_usr_local_lib_python3_from_site_packages_to_dist_packages() {
 find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-1-before-protobuf.txt
 
 # --- Protobuf --- #
-git clone https://github.com/google/protobuf.git
+git clone https://github.com/protocolbuffers/protobuf
 cd protobuf
 git checkout ${PROTOBUF_COMMIT}
+git submodule update --init --recursive
 ./autogen.sh
-# install-p4dev-v4.sh script doesn't have --prefix=/usr option here.
+# install-p4dev-v6.sh script doesn't have --prefix=/usr option here.
 ./configure --prefix=/usr
 make -j${NUM_CORES}
 sudo make install
@@ -118,11 +119,9 @@ git clone https://github.com/grpc/grpc.git
 cd grpc
 git checkout ${GRPC_COMMIT}
 git submodule update --init --recursive
-# Apply patch that seems to be necessary in order for grpc v1.17.2 to
-# compile and install successfully on an Ubuntu 19.10 and later
-# system.
-PATCH_DIR="${HOME}/patches"
-patch -p1 < "${PATCH_DIR}/disable-Wno-error-and-other-small-changes.diff" || echo "Errors while attempting to patch grpc, but continuing anyway ..."
+mkdir -p cmake/build
+cd cmake/build
+cmake ../..
 make -j${NUM_CORES}
 sudo make install
 # I believe the following 2 commands, adapted from similar commands in
@@ -130,6 +129,7 @@ sudo make install
 # grpc.
 find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-2b-before-grpc-pip3.txt
 pip3 list | tee $HOME/pip3-list-2b-before-grpc-pip3.txt
+cd ../..
 sudo pip3 install -rrequirements.txt
 GRPC_PYTHON_BUILD_WITH_CYTHON=1 sudo pip3 install .
 sudo ldconfig
@@ -151,15 +151,12 @@ cd PI
 git checkout ${PI_COMMIT}
 git submodule update --init --recursive
 ./autogen.sh
-# install-p4dev-v4.sh adds more --without-* options to the configure
+# install-p4dev-v6.sh adds more --without-* options to the configure
 # script here.  I suppose without those, this script will cause
 # building PI code to include more features?
 ./configure --with-proto
 make -j${NUM_CORES}
 sudo make install
-# install-p4dev-v4.sh at this point does these things, which might be
-# useful in this script, too:
-# Save about 0.25G of storage by cleaning up PI build
 make clean
 move_usr_local_lib_python3_from_site_packages_to_dist_packages
 sudo ldconfig
@@ -177,7 +174,7 @@ git checkout ${BMV2_COMMIT}
 make -j${NUM_CORES}
 sudo make install-strip
 sudo ldconfig
-# install-p4dev-v4.sh script does this here:
+# install-p4dev-v6.sh script does this here:
 move_usr_local_lib_python3_from_site_packages_to_dist_packages
 cd ..
 
@@ -190,7 +187,7 @@ git checkout ${P4C_COMMIT}
 git submodule update --init --recursive
 mkdir -p build
 cd build
-cmake ..
+cmake .. -DENABLE_TEST_TOOLS=ON
 # The command 'make -j${NUM_CORES}' works fine for the others, but
 # with 2 GB of RAM for the VM, there are parts of the p4c build where
 # running 2 simultaneous C++ compiler runs requires more than that
@@ -207,7 +204,7 @@ find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-6-after-p4c.txt
 git clone https://github.com/p4lang/ptf
 cd ptf
 git checkout ${PTF_COMMIT}
-sudo python3 setup.py install
+sudo pip3 install .
 cd ..
 
 find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-8-after-ptf-install.txt
