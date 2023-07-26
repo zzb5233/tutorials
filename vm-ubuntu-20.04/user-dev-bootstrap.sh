@@ -14,6 +14,19 @@ GRPC_COMMIT="tags/v1.43.2"
 #Get the number of cores to speed up the compilation process
 NUM_CORES=`grep -c ^processor /proc/cpuinfo`
 
+# Change this to a lower value if you do not like all this extra debug
+# output.  It is occasionally useful to debug why Python package
+# install files, or other files installed system-wide, are not going
+# to the places where one might hope.
+DEBUG_INSTALL=2
+
+debug_dump_many_install_files() {
+    local OUT_FNAME="$1"
+    if [ ${DEBUG_INSTALL} -ge 2 ]
+    then
+	find /usr/lib /usr/local $HOME/.local | sort > "${OUT_FNAME}"
+    fi
+}
 
 # The install steps for p4lang/PI and p4lang/behavioral-model end
 # up installing Python module code in the site-packages directory
@@ -93,7 +106,7 @@ move_usr_local_lib_python3_from_site_packages_to_dist_packages() {
     ls -lrt ${DST_DIR}
 }
 
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-1-before-protobuf.txt
+debug_dump_many_install_files $HOME/usr-local-1-before-protobuf.txt
 
 # --- Protobuf --- #
 git clone https://github.com/protocolbuffers/protobuf
@@ -106,13 +119,9 @@ git submodule update --init --recursive
 make -j${NUM_CORES}
 sudo make install
 sudo ldconfig
-# Force install python module
-#cd python
-#sudo python3 setup.py install
-#cd ../..
 cd ..
 
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-2-after-protobuf.txt
+debug_dump_many_install_files $HOME/usr-local-2-after-protobuf.txt
 
 # --- gRPC --- #
 git clone https://github.com/grpc/grpc.git
@@ -124,18 +133,25 @@ cd cmake/build
 cmake ../..
 make -j${NUM_CORES}
 sudo make install
-# I believe the following 2 commands, adapted from similar commands in
-# src/python/grpcio/README.rst, should install the Python3 module
-# grpc.
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-2b-before-grpc-pip3.txt
+# I believe the following 2 'pip3 install ...' commands, adapted from
+# similar commands in src/python/grpcio/README.rst, should install the
+# Python3 module grpc.
+debug_dump_many_install_files $HOME/usr-local-2b-before-grpc-pip3.txt
 pip3 list | tee $HOME/pip3-list-2b-before-grpc-pip3.txt
 cd ../..
+# Before some time in 2023-July, the `sudo pip3 install
+# -rrequirements.txt` command below installed the Cython package
+# version 0.29.35.  After that time, it started installing Cython
+# package version 3.0.0, which gives errors on the `sudo pip3 install
+# .` command afterwards.  Fix this by forcing installation of a known
+# working version of Cython.
+sudo pip3 install Cython==0.29.35
 sudo pip3 install -rrequirements.txt
 GRPC_PYTHON_BUILD_WITH_CYTHON=1 sudo pip3 install .
 sudo ldconfig
 cd ..
 
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-3-after-grpc.txt
+debug_dump_many_install_files $HOME/usr-local-3-after-grpc.txt
 
 # Note: This is a noticeable difference between how an earlier
 # user-bootstrap.sh version worked, where it effectively ran
@@ -162,7 +178,7 @@ move_usr_local_lib_python3_from_site_packages_to_dist_packages
 sudo ldconfig
 cd ..
 
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-4-after-PI.txt
+debug_dump_many_install_files $HOME/usr-local-4-after-PI.txt
 
 # --- Bmv2 --- #
 git clone https://github.com/p4lang/behavioral-model.git
@@ -178,7 +194,7 @@ sudo ldconfig
 move_usr_local_lib_python3_from_site_packages_to_dist_packages
 cd ..
 
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-5-after-behavioral-model.txt
+debug_dump_many_install_files $HOME/usr-local-5-after-behavioral-model.txt
 
 # --- P4C --- #
 git clone https://github.com/p4lang/p4c
@@ -198,7 +214,7 @@ sudo make install
 sudo ldconfig
 cd ../..
 
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-6-after-p4c.txt
+debug_dump_many_install_files $HOME/usr-local-6-after-p4c.txt
 
 # --- PTF --- #
 git clone https://github.com/p4lang/ptf
@@ -207,4 +223,4 @@ git checkout ${PTF_COMMIT}
 sudo pip3 install .
 cd ..
 
-find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-8-after-ptf-install.txt
+debug_dump_many_install_files $HOME/usr-local-8-after-ptf-install.txt
