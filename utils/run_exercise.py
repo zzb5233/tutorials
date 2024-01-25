@@ -91,7 +91,10 @@ class ExerciseTopo(Topo):
             else:
                 # add default switch
                 switchClass = None
-            self.addSwitch(sw, log_file="%s/%s.log" %(log_dir, sw), cls=switchClass)
+            if "cpu_port" in params:
+                self.addSwitch(sw, log_file="%s/%s.log" %(log_dir, sw), cpu_port=params["cpu_port"], cls=switchClass)
+            else:
+                self.addSwitch(sw, log_file="%s/%s.log" %(log_dir, sw), cls=switchClass)
 
         for link in host_links:
             host_name = link['node1']
@@ -385,4 +388,3 @@ if __name__ == '__main__':
                               args.switch_json, args.behavioral_exe, args.quiet)
 
     exercise.run_exercise()
-
