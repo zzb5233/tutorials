@@ -33,7 +33,7 @@ you to test your calculator. You can run the driver program directly
 from the Mininet command prompt:
 
 ```
-mininet> h1 python calc.py
+mininet> h1 python3 calc.py
 >
 ```
 
