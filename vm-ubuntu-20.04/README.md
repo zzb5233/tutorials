@@ -87,7 +87,8 @@ version of source code used to create that image already included in
 the home directory of the `vagrant` user account:
 
 ```bash
-# git clone --recursive https://github.com/p4lang/p4c
+# for Release VM image only 
+git clone --recursive https://github.com/p4lang/p4c
 ```
 
 The following steps are common for both Release and Development VM
