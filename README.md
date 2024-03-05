@@ -43,6 +43,9 @@ Sure, here's the revised structure with bullet points inside the numbered sectio
    - [Quality of Service](./exercises/qos)<br>
      <small>This tutorial focuses on implementing Quality of Service (QoS) using Differentiated Services (Diffserv) in a P4 program named `qos.p4`. It extends basic L3 forwarding to classify and manage network traffic, providing QoS on modern IP networks by setting DiffServ flags based on traffic classes and priority.</small>
 
+   - [Multicasting](./exercises/multicast)<br> 
+     <small>This exercise involves writing a P4 program to enable a network switch to multicast packets to multiple output ports based on the destination MAC address. It requires the implementation of logic to handle multicast packets, including defining actions for packet forwarding and configuring the control plane to manage packet processing rules. Through practical implementation and testing in a Mininet environment, participants learn to enhance network traffic management and efficiency through multicast communication.</small>
+
 5. Stateful Packet Processing
    - [Firewall](./exercises/firewall)<br>
      <small>This exercise focuses on implementing a basic stateful firewall using a P4 program named `firewall.p4`. The firewall is designed to allow communication between internal and external hosts based on predefined rules, utilizing a bloom filter for stateful packet inspection and filtering.</small>
