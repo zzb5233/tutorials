@@ -6,7 +6,7 @@
 ;; Created: 15 April 2017
 ;; Version: 0.2
 ;; Keywords: languages p4_16
-;; Homepage: http://p4.org
+;; Homepage: https://p4.org
 
 ;; This file is not part of GNU Emacs.
 

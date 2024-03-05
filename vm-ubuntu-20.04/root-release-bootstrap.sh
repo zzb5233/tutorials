@@ -14,8 +14,8 @@ wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
 # Add repository with P4 packages
 # https://build.opensuse.org/project/show/home:p4lang
 
-echo "deb http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_20.04/ /" | sudo tee /etc/apt/sources.list.d/home:p4lang.list
-wget -qO - "http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_20.04/Release.key" | apt-key add -
+echo "deb https://download.opensuse.org/repositories/home:/p4lang/xUbuntu_20.04/ /" | sudo tee /etc/apt/sources.list.d/home:p4lang.list
+wget -qO - "https://download.opensuse.org/repositories/home:/p4lang/xUbuntu_20.04/Release.key" | apt-key add -
 
 apt-get update -qq
 
