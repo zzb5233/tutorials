@@ -140,7 +140,7 @@ debug_dump_many_install_files $HOME/usr-local-2b-before-grpc-pip3.txt
 pip3 list | tee $HOME/pip3-list-2b-before-grpc-pip3.txt
 cd ../..
 # Before some time in 2023-July, the `sudo pip3 install
-# -rrequirements.txt` command below installed the Cython package
+# -r requirements.txt` command below installed the Cython package
 # version 0.29.35.  After that time, it started installing Cython
 # package version 3.0.0, which gives errors on the `sudo pip3 install
 # .` command afterwards.  Fix this by forcing installation of a known
