@@ -129,7 +129,7 @@ mn -c
 
 ## Next Steps
 
-Congratulations, your implementation works! Move on to [Multi-Hop Route Inspection](../mri).
+Congratulations, your implementation works! Move on to [Quality of Service](../qos).
 
 ## Relevant Documentation
 

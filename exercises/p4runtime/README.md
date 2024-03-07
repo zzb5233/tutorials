@@ -184,7 +184,7 @@ solution/my_controller.py
 ## Next Steps
 
 Congratulations, your implementation works! Move onto the next assignment
-[mri](../mri)!
+[Explicit Congestion Notification](../ecn)
 
 
 ## Relevant Documentation

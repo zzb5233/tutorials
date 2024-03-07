@@ -155,6 +155,11 @@ these instances:
 make stop
 ```
 
+## Next Steps
+
+Congratulations, your implementation works! Move on to [Firewall](../firewall).
+
+
 ## Relevant Documentation
 
 The documentation for P4_16 and P4Runtime is available [here](https://p4.org/specs/)

@@ -144,7 +144,7 @@ mn -c
 ## Next Steps
 
 Congratulations, your implementation works! Move on to
-[Load Balance](../load_balance).
+[Calculator](../calc).
 
 
 ## Relevant Documentation
