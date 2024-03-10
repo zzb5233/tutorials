@@ -42,6 +42,8 @@ bring up a network in Mininet to test its behavior.
    * The hosts are assigned IPs of `10.0.1.1`, `10.0.2.2`, etc
      (`10.0.<Switchid>.<hostID>`).
 
+![Setup](setup.png)
+
 2. You should now see a Mininet command prompt. Open two terminals for
    `h1` and `h2`, respectively:
    ```bash
