@@ -154,7 +154,8 @@ def validateTableEntry(flow, p4info_helper, runtime_json):
     priority = flow.get('priority')  # None if not found
     match_types_with_priority = [
         p4info_pb2.MatchField.TERNARY,
-        p4info_pb2.MatchField.RANGE
+        p4info_pb2.MatchField.RANGE,
+        p4info_pb2.MatchField.OPTIONAL
     ]
     if match_fields is not None and (priority is None or priority == 0):
         for match_field_name, _ in match_fields.items():
