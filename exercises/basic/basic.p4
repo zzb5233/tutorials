@@ -79,7 +79,19 @@ control MyIngress(inout headers hdr,
     }
 
     action ipv4_forward(macAddr_t dstAddr, egressSpec_t port) {
-        /* TODO: fill out code in action body */
+        /*
+            Action function for forwarding IPv4 packets.
+
+            This function is responsible for forwarding IPv4 packets to the specified
+            destination MAC address and egress port.
+
+            Parameters:
+            - dstAddr: Destination MAC address of the packet.
+            - port: Egress port where the packet should be forwarded.
+
+            TODO: Implement the logic for forwarding the IPv4 packet based on the
+            destination MAC address and egress port.
+        */
     }
 
     table ipv4_lpm {
@@ -144,7 +156,19 @@ control MyComputeChecksum(inout headers hdr, inout metadata meta) {
 
 control MyDeparser(packet_out packet, in headers hdr) {
     apply {
-        /* TODO: add deparser logic */
+        /*
+        Control function for deparser.
+
+        This function is responsible for constructing the output packet by appending
+        headers to it based on the input headers.
+
+        Parameters:
+        - packet: Output packet to be constructed.
+        - hdr: Input headers to be added to the output packet.
+
+        TODO: Implement the logic for constructing the output packet by appending
+        headers based on the input headers.
+        */
     }
 }
 
