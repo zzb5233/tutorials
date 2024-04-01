@@ -74,18 +74,38 @@ then we've already provided you with a virtual machine that has all of
 the required software installed. Ask an instructor for a USB stick with
 the VM image.
 
-Otherwise, to complete the exercises, you will need to either build a
+Otherwise, to complete the [exercises](https://github.com/p4lang/tutorials/tree/master/exercises), you will need to either build a
 virtual machine or install several dependencies.
-
 
 ### To build the virtual machine
 
-- Install [Vagrant](https://vagrantup.com) and [VirtualBox](https://virtualbox.org)
-- Clone the repository
-- Before proceeding, ensure that your system has at least 12 Gbytes of free disk space, otherwise the installation can fail in unpredictable ways.
-- `cd vm-ubuntu-20.04`
-- `vagrant up` - The time for this step to complete depends upon your computer and Internet access speeds, but for example with a 2015 MacBook pro and 50 Mbps download speed, it took a little less than 20 minutes.  It requires a reliable Internet connection throughout the entire process.
-- When the machine reboots, you should have a graphical desktop machine with the required software pre-installed.  There are two user accounts on the VM, `vagrant` (password `vagrant`) and `p4` (password `p4`).  The account `p4` is the one you are expected to use.
+#### Requirements
+
+- [Vagrant](https://vagrantup.com)
+- [VirtualBox](https://virtualbox.org)
+- At least 12 GB of free disk space, otherwise the installation can fail in unpredictable ways.
+
+#### Installation Steps
+
+1. Install Vagrant and VirtualBox on your system.
+2. Clone the repository
+3. Navigate to the cloned directory :
+   
+   ```
+   cd vm-ubuntu-20.04
+   ```
+4. Start the virtual machine using Vagrant:
+   ```
+   vagrant up
+   ```
+   *Note* : The time for this step depends on your computer and Internet speed. On a 2015 MacBook Pro with a 50 Mbps download speed, it took approximately 20 minutes. Ensure a stable Internet connection throughout the process.
+
+### Accessing the VM
+
+
+- There are two user accounts:
+  - Username: vagrant | Password: vagrant (This is the default account)
+  - Username: p4 | Password: p4 (Usage of this account is expected)
 
 *Note*: Before running the `vagrant up` command, make sure you have enabled virtualization in your environment; otherwise you may get a "VT-x is disabled in the BIOS for both all CPU modes" error. Check [this](https://stackoverflow.com/questions/33304393/vt-x-is-disabled-in-the-bios-for-both-all-cpu-modes-verr-vmx-msr-all-vmx-disabl) for enabling it in virtualbox and/or BIOS for different system configurations.
 
