@@ -205,6 +205,22 @@ got a packet
 
 ```
 
+### Food for thought
+The maximum queue depth and queue rate of each switch can be configured using `simple_switch_CLI`. Connect to the CLI of switch `s1` using the following command on your host machine:
+```bash
+simple_switch_CLI --thrift-port 9090
+```
+
+Then, set the maximum queue depth and rate using the following commands:
+```bash
+set_queue_rate 50
+set_queue_depth 100
+```
+
+Feel free to experiment with different values for each switch and observe the changes in the MRI header.
+
+How does the `qdepth` header change with different queue depths and rates?
+
 ### Troubleshooting
 
 There are several ways that problems might manifest:

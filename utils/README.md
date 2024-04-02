@@ -154,7 +154,7 @@ In this file, the following elements are defined:
     
     * *program*. Defines the program inserted into the switch (data plane). <u>Note</u>: If this parameter is not set, then the execution assumes the default P4 file (passed on startup).
     * *runtime_json*. Defines the path for the control plane file.
-    * *runtime_cli*. Also defines the path for the control plane file. This file is directed at actions that are only supported by the switch_cli interface (such as setting up mirroring).
+    * *cli_input*. Defines the path for a command file to be executed in the switch's CLI. This file is directed at actions that are only supported by the switch_cli interface (such as setting up mirroring or setting queue rates and depths).
     
 * **links**. Defines the links between network nodes. The following list format is used: 
     ```[Node1, Node2, Latency, Bandwidth]```, where nodes can be defined as ```<Hostname>```, for hosts, and ```<SwitchName>-<SwitchPort>``` for switches. Both *latency* and *bandwidth* are optional, where *latency* is an integer defined in milliseconds(ms) and *bandwidth* is a float defined in megabits per second (Mb/s).
