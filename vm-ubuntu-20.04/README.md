@@ -1,13 +1,23 @@
 # Creating the VM
++ Below are the steps to create a brand new VM using Vagrant:
+  + Install [Vagrant](https://developer.hashicorp.com/vagrant/docs/installation) on your system if it's not already installed.
+  + Navigate to the directory where you want to create the new VM.
+  + Run the below command in the terminal.
+    
+    ```
+    vagrant up
+    ```
 
-Start creating a brand new VM by running `vagrant up` in this
-directory (install Vagrant on your system if needed). This command
-creates a _release_ VM that includes P4 software installed from
-pre-compiled packages and allows to update those packages with `apt
-upgrade`.
+  - This command will initiate the creation of a release VM.
+  - The VM will include P4 software installed from pre-compiled packages.
+  - You can update these packages using `apt upgrade` within the VM.
 
-Alternatively, a development VM can be created by running `vagrant up
-dev`.  Note that creating a development VM can take one to several
++ Alternatively, a development VM can be created by running 
+  ```
+  vagrant up dev
+  ```
+
+*Note* : that creating a development VM can take one to several
 hours, depending upon the speed of your computer and Internet
 connection.
 
@@ -25,15 +35,24 @@ once per month.
   version released for Ubuntu 20.04, and other updated packages.
 + Reboot the system.
 + This is optional, but if you want to save a little disk space, use
-  `sudo apt purge <list of packages>` to remove older version of Linux
+  
+  ```
+  sudo apt purge <list of packages>
+  ```
+  
+  to remove older version of Linux
   kernel, if the upgrade installed a newer one.
-+ `sudo apt clean`
-
++ Clean the local repository of retrieved package files to free up disk space
+  
+  ```
+  sudo apt clean
+  ```
+  
 + Log in as user p4 (password p4)
 + Start menu -> Preferences -> LXQt settings -> Monitor settings
   + Change resolution from initial 800x600 to 1024x768.  Apply the changes.
   + Close monitor settings window
-  + Note: For some reason I do not know, these settings seem to be
+  + *Note*: For some reason I do not know, these settings seem to be
     undone, even if I use the "Save" button.  They are temporarily in
     effect if I shut down the system and log back in, but then in a few
     seconds it switches back to 800x600.  Strange.
@@ -61,7 +80,12 @@ once per month.
 + Change monitor settings and wallpaper mode as described above for
   user p4.
 + Open a terminal.
-  + Run the command `./clean.sh`, which removes about 6 to 7 GBytes of
+  + Run the command
+    
+    ```
+    ./clean.sh
+    ```
+    which removes about 6 to 7 GBytes of
     files created while building the projects.
 + Log off
 
