@@ -116,6 +116,7 @@ to hosts. For this step you will need to add your forwarding rules to the
   header, and the message. If you change the destination IP address (e.g. try
   to send to `10.0.3.3`) then the message should not be received by `h2`, and
   will instead be received by `h3`.
+  
 5. Now we test with tunneling. In `h1`'s xterm, send a message to `h2`:
   ```bash
   ./send.py 10.0.2.2 "P4 is cool" --dst_id 2
@@ -123,6 +124,7 @@ to hosts. For this step you will need to add your forwarding rules to the
   The packet should be received at `h2`. If you examine the received packet you
   should see that is consists of an Ethernet header, a tunnel header, an IP header,
   a TCP header, and the message.
+  
 6. In `h1`'s xterm, send a message:
   ```bash
   ./send.py 10.0.3.3 "P4 is cool" --dst_id 2
@@ -130,6 +132,7 @@ to hosts. For this step you will need to add your forwarding rules to the
   The packet should be received at `h2`, even though that IP address is the address
   of `h3`. This is because the switch is no longer using the IP header for routing
   when the `MyTunnel` header is in the packet.
+  
 7. Type `exit` or `Ctrl-D` to leave each xterm and the Mininet command line.
 
 
