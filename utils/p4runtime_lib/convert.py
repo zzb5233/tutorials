@@ -43,6 +43,19 @@ def encodeIPv4(ip_addr_string):
 def decodeIPv4(encoded_ip_addr):
     return socket.inet_ntoa(encoded_ip_addr)
 
+def matchesIPv6(ip_addr_string):
+    try:
+        socket.inet_pton(socket.AF_INET6, ip_addr_string)
+        return True
+    except socket.error:
+        return False
+
+def encodeIPv6(ip_addr_string):
+    return socket.inet_pton(socket.AF_INET6, ip_addr_string)
+
+def decodeIPv6(encoded_ip_addr):
+    return socket.inet_ntop(socket.AF_INET6, encoded_ip_addr) 
+
 def bitwidthToBytes(bitwidth):
     return int(math.ceil(bitwidth / 8.0))
 
@@ -77,6 +90,8 @@ def encode(x, bitwidth):
             encoded_bytes = encodeMac(x)
         elif matchesIPv4(x):
             encoded_bytes = encodeIPv4(x)
+        elif matchesIPv6(x):
+            encoded_bytes = encodeIPv6(x)
         else:
             # Assume that the string is already encoded
             encoded_bytes = x
