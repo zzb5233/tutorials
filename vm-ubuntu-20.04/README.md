@@ -136,7 +136,7 @@ except for some of the p4testgen tests (if those are enabled).
 
 ## Send ping packets in the solution to `basic` exercise of `p4lang/tutorials` repository
 
-With the version of the https://github.com/p4lang/tutorials repository
+With the version of the [tutorials](https://github.com/p4lang/tutorials) repository
 that comes pre-installed in the `p4` user account of this VM, the
 following tests pass.
 
