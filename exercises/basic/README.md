@@ -173,6 +173,14 @@ these instances:
 make stop
 ```
 
+## The Use of Gateway (gw) and ARP Commands in `topology.json`
+- Gateway (gw) Command: The `route add default gw` command is used to set the default gateway for a host. This tells the host which IP address to send packets to if the destination IP is not on the same subnet. It's important for hosts to know their default gateway to communicate with devices outside their local network.
+- ARP Command: The `arp -i eth0 -s` command is used to add static ARP entries to the host's ARP cache. When you add static ARP entries, you're telling your computer something like i.e. "Hey, I already know who lives at this IP address (like 10.0.0.1), so you don't need to keep asking everyone on the network 'Who has this IP?' all the time." This is particularly important in this exercise (and most of the other exercises) since the switches do not respond to ARP requests. In real networks, production switches typically do respond to ARP requests, but in these exercises, static ARP entries are necessary for the gateway router due to this behavior.
+  - `-i eth0`: This specifies the network interface (e.g. eth0) on which you want to perform the ARP operation.
+  - `-s`: This flag is used to set a static ARP entry.
+
+*Note*: If you remove the gateway and ARP commands, the hosts in your network might lose connectivity to each other and to devices outside their local subnet. This can result in 100% packet loss when running the `pingall` command because the hosts don't have the necessary routing information and ARP entries to reach their destinations.
+
 ## Next Steps
 
 Congratulations, your implementation works! Move onto the next assignment
