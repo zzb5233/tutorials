@@ -264,6 +264,8 @@ Routing](../source_routing).
 
 ## Relevant Documentation
 
+Documentation on the Usage of Gateway (gw) and ARP Commands in topology.json is [here](https://github.com/p4lang/tutorials/tree/master/exercises/basic#the-use-of-gateway-gw-and-arp-commands-in-topologyjson)
+
 The documentation for P4_16 and P4Runtime is available [here](https://p4.org/specs/)
 
 All excercises in this repository use the v1model architecture, the documentation for which is available at:
