@@ -16,13 +16,13 @@ from scapy.all import (
 class P4calc(Packet):
     name = "P4calc"
     # Define fields for the P4calc packet
-    fields_desc = [ StrFixedLenField("P", "P", length=1), 
-                    StrFixedLenField("Four", "4", length=1),  
-                    XByteField("version", 0x01),  
-                    StrFixedLenField("op", "+", length=1),  
-                    IntField("operand_a", 0),  
-                    IntField("operand_b", 0),  
-                    IntField("result", 0xDEADBABE)]  
+    fields_desc = [ StrFixedLenField("P", "P", length=1),
+                    StrFixedLenField("Four", "4", length=1),
+                    XByteField("version", 0x01),
+                    StrFixedLenField("op", "+", length=1),
+                    IntField("operand_a", 0),
+                    IntField("operand_b", 0),
+                    IntField("result", 0xDEADBABE)]
 
 # Bind custom packet class to Ethernet type 0x1234
 bind_layers(Ether, P4calc, type=0x1234)
@@ -79,7 +79,7 @@ def main():
             break
         print(s)
         try:
-            i,ts = p(s,0,[])  
+            i,ts = p(s,0,[])
             # Construct packet using parsed tokens
             pkt = Ether(dst='00:04:00:00:00:00', type=0x1234) / P4calc(op=ts[1].value,
                                               operand_a=int(ts[0].value),
