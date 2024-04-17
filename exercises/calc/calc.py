@@ -49,9 +49,9 @@ def op_parser(s, i, ts):
     pattern = "^\s*([-+&|^])\s*"
     match = re.match(pattern,s[i:])
     if match:
-        ts.append(Token('num', match.group(1)))
+        ts.append(Token('op', match.group(1)))
         return i + match.end(), ts
-    raise NumParseError("Expected binary operator '-', '+', '&', '|', or '^'.")
+    raise OpParseError("Expected binary operator '-', '+', '&', '|', or '^'.")
 
 
 def make_seq(p1, p2):
