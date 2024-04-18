@@ -1,5 +1,15 @@
 # P4 Tutorial
 
+* [Introduction](#introduction)
+* [Presentation](#presentation)
+* [P4 Documentation](#p4-documentation)
+* [Obtaining required software](#obtaining-required-software)
+     * [To build the virtual machine](#to-build-the-virtual-machine)
+     * [Accessing the VM](#accessing-the-vm)
+     * [To install P4 development tools on an existing system](#to-install-p4-development-tools-on-an-existing-system)
+* [How to Contribute](#how-to-contribute)
+* [Older tutorials](#older-tutorials)
+
 If you are reading this while not attending a live P4 tutorial class,
 see [below](#older-tutorials) for links to information about recently
 given live classes.
