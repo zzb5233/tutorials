@@ -116,6 +116,9 @@ You will need the script to execute to completion before you can see the `p4` lo
 
 There are instructions and scripts in another Github repository that can, starting from a freshly installed Ubuntu 20.04 or 22.04 Linux system with enough RAM and free disk space, install all of the necessary P4 development tools to run the exercises in this repository.  You can find those instructions and scripts [here](https://github.com/jafingerhut/p4-guide/blob/master/bin/README-install-troubleshooting.md) (note that you must clone a copy of that entire repository in order for its install scripts to work).
 
+# How to Contribute
+
+We value and welcome new contributions. To get started, kindly look at our [Contribution Guidelines](CONTRIBUTING.md).
 
 # Older tutorials
 
