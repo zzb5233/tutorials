@@ -28,7 +28,7 @@
 
 ;; Syntactic HighLighting
 
-;; Main keywors (declarations and operators)
+;; Main keywords (declarations and operators)
 (setq p4_16-keywords
       '("action" "apply"
         "control"
