@@ -146,7 +146,7 @@ such a link.
 
 ## ACM SIGCOMM August 2019 Tutorial on Programming the Network Data Plane
 
-https://p4.org/events/2019-08-23-p4-tutorial/
+You can find more information about the ACM SIGCOMM August 2019 Tutorial on Programming the Network Data Plane [here](https://p4.org/events/2019-08-23-p4-tutorial/)
 
 The page linked above has a link to download a pre-built VM image used
 for this class, as well as instructions to build one yourself from a
@@ -155,7 +155,7 @@ particular branch of this repository.
 
 ## P4 Developer Day, April 2019
 
-https://p4.org/events/2019-04-30-p4-developer-day/
+You can find more information about the P4 Developer Day held in April 2019 [here](https://p4.org/events/2019-04-30-p4-developer-day/)
 
 Both a beginner and advanced class were taught at this event.  The
 page linked above contains instructions to download and install a
@@ -164,7 +164,5 @@ pre-built Linux VM that was used during the classes.
 
 ## P4 Developer Day, November 2017
 
-* [YouTube
-  videos](https://www.youtube.com/watch?v=3DJeqS_dl_o&list=PLf7HGRMAlJBzGC58GcYpimyIs7D0nuSoo)
-  - This link plays the first welcome video of a series of 6 videos of
-  tutorials given at this event.
+This [link](https://www.youtube.com/watch?v=3DJeqS_dl_o&list=PLf7HGRMAlJBzGC58GcYpimyIs7D0nuSoo) plays the first welcome video of a 
+series of 6 videos of tutorials given at this event.
