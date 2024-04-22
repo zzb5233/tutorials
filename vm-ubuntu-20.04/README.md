@@ -64,8 +64,7 @@ once per month.
   them.  If you try double-clicking those icons, it pops up a window
   saying "This file 'Wireshark' seems to be a desktop entry.  What do
   you want to do with it?" with buttons for "Open", "Execute", and
-  "Cancel".  Clicking "Open" causes the file to be opened using the
-  Atom editor.  Clicking "Execute" executes the associated command.
+  "Cancel".  Clicking "Execute" executes the associated command.
   If you do a mouse middle click on one of these desktop icons, a
   popup menu appears where the second-to-bottom choice is "Trust this
   executable".  Selecting that causes the exclamation mark to go away,

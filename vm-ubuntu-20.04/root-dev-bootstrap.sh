@@ -3,21 +3,15 @@
 # Print commands and exit on errors
 set -xe
 
-# Atom install steps came from this page on 2020-May-11:
-# https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux
-
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
-sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-# These commands are done later below
-#apt-get update
-#apt-get install atom
+# Atom editor no longer installed, as it is no longer maintained by
+# its developers, in favor of VSCode.
+# https://github.blog/2022-06-08-sunsetting-atom/
 
 apt-get update
 
 KERNEL=$(uname -r)
 DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
 apt-get install -y --no-install-recommends --fix-missing\
-  atom \
   autoconf \
   automake \
   bison \

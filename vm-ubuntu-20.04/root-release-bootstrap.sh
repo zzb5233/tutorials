@@ -5,11 +5,9 @@ set -xe
 
 export DEBIAN_FRONTEND=noninteractive
 
-# Atom install steps came from this page on 2020-May-11:
-# https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux
-
-echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" | sudo tee /etc/apt/sources.list.d/atom.list
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
+# Atom editor no longer installed, as it is no longer maintained by
+# its developers, in favor of VSCode.
+# https://github.blog/2022-06-08-sunsetting-atom/
 
 # Add repository with P4 packages
 # https://build.opensuse.org/project/show/home:p4lang
@@ -21,7 +19,6 @@ apt-get update -qq
 
 apt-get -qq -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
 apt-get install -qq -y --no-install-recommends --fix-missing\
-  atom \
   ca-certificates \
   curl \
   emacs \
