@@ -99,6 +99,10 @@ virtual machine or install several dependencies.
 
 1. Install Vagrant and VirtualBox on your system.
 2. Clone the repository
+   
+   ```
+   git clone https://github.com/p4lang/tutorials.git
+   ```
 3. Navigate to the cloned directory :
    
    ```
