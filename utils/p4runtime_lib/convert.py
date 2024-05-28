@@ -23,7 +23,7 @@ This package contains several helper functions for encoding to and decoding from
 - Ethernet address strings
 '''
 
-mac_pattern = re.compile('^([\da-fA-F]{2}:){5}([\da-fA-F]{2})$')
+mac_pattern = re.compile(r'^([\da-fA-F]{2}:){5}([\da-fA-F]{2})$')
 def matchesMac(mac_addr_string):
     return mac_pattern.match(mac_addr_string) is not None
 
@@ -33,7 +33,7 @@ def encodeMac(mac_addr_string):
 def decodeMac(encoded_mac_addr):
     return ':'.join(s.hex() for s in encoded_mac_addr)
 
-ip_pattern = re.compile('^(\d{1,3}\.){3}(\d{1,3})$')
+ip_pattern = re.compile(r'^(\d{1,3}\.){3}(\d{1,3})$')
 def matchesIPv4(ip_addr_string):
     return ip_pattern.match(ip_addr_string) is not None
 
