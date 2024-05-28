@@ -120,11 +120,11 @@ detailed and can help pinpoint logic errors in your implementation.
 #### Cleaning up Mininet
 
 In the latter two cases above, `make` may leave a Mininet instance
-running in the background.  Use the following command to clean up
+running in the background. Use the following command to clean up
 these instances:
 
 ```bash
-mn -c
+make stop
 ```
 
 ## Next Steps
