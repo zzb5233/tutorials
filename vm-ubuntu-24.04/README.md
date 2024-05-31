@@ -6,8 +6,9 @@ Feel free to try it out and report problems if you find any.
 Known issues that anyone who knows how to fix is welcome to suggest
 improvements:
 
-+ The VM created has a GUI desktop with icons, but the icon images are
-  "blank".
++ The desktop icon for the Wireshark application does not seem to
+  exist, at least not under the name that worked for Ubuntu 20.04, so
+  it shows up as a question mark.
 
 
 # Creating the VM
@@ -82,9 +83,10 @@ create new VM images once per month.
   + In "Wallpaper mode" popup menu, choose "Center on the screen".
   + Click Apply button
   + Close "Desktop preferences" window
-+ The desktop "icons" are some kind of strange invisible or
-  non-existent icon images.  If you know how to fix this, please let
-  me know.
++ Start menu -> Preferences -> LXQt settings -> Appearance
+  + Click "Icons Theme" in left column
+  + Click "Ubuntu-Mono-Light ..." in right column.
+  + Click "Apply" button, then "Close" button.
 + Several of the icons on the desktop have an exclamation mark on
   them.  If you try double-clicking those icons, it pops up a window
   saying "This file 'Wireshark' seems to be a desktop entry.  What do
@@ -243,7 +245,7 @@ Virtual system settings:
 + Description:
 
 ```
-Open source P4 development tools built from latest source code as of 2024-Jun-01 and packaged into an Ubuntu 20.04 Desktop Linux VM for the AMD64 architecture.
+Open source P4 development tools built from latest source code as of 2024-Jun-01 and packaged into an Ubuntu 24.04 Desktop Linux VM for the AMD64 architecture.
 ```
 
 + License
