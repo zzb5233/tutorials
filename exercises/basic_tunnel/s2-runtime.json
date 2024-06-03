@@ -6,7 +6,10 @@
     {
       "table": "MyIngress.ipv4_lpm",
       "match": {
-        "hdr.ipv4.dstAddr": ["10.0.1.1", 32]
+        "hdr.ipv4.dstAddr": [
+          "10.0.1.1",
+          32
+        ]
       },
       "action_name": "MyIngress.ipv4_forward",
       "action_params": {
@@ -17,7 +20,10 @@
     {
       "table": "MyIngress.ipv4_lpm",
       "match": {
-        "hdr.ipv4.dstAddr": ["10.0.2.2", 32]
+        "hdr.ipv4.dstAddr": [
+          "10.0.2.2",
+          32
+        ]
       },
       "action_name": "MyIngress.ipv4_forward",
       "action_params": {
@@ -28,7 +34,10 @@
     {
       "table": "MyIngress.ipv4_lpm",
       "match": {
-        "hdr.ipv4.dstAddr": ["10.0.3.3", 32]
+        "hdr.ipv4.dstAddr": [
+          "10.0.3.3",
+          32
+        ]
       },
       "action_name": "MyIngress.ipv4_forward",
       "action_params": {
@@ -36,11 +45,12 @@
         "port": 3
       }
     },
-
     {
       "table": "MyIngress.myTunnel_exact",
       "match": {
-        "hdr.myTunnel.dst_id": [1]
+        "hdr.myTunnel.dst_id": [
+          1
+        ]
       },
       "action_name": "MyIngress.myTunnel_forward",
       "action_params": {
@@ -50,7 +60,9 @@
     {
       "table": "MyIngress.myTunnel_exact",
       "match": {
-        "hdr.myTunnel.dst_id": [2]
+        "hdr.myTunnel.dst_id": [
+          2
+        ]
       },
       "action_name": "MyIngress.myTunnel_forward",
       "action_params": {
@@ -60,7 +72,9 @@
     {
       "table": "MyIngress.myTunnel_exact",
       "match": {
-        "hdr.myTunnel.dst_id": [3]
+        "hdr.myTunnel.dst_id": [
+          3
+        ]
       },
       "action_name": "MyIngress.myTunnel_forward",
       "action_params": {

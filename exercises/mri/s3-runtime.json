@@ -8,13 +8,16 @@
       "default_action": true,
       "action_name": "MyEgress.add_swtrace",
       "action_params": {
-         "swid": 3
-       }
+        "swid": 3
+      }
     },
     {
       "table": "MyIngress.ipv4_lpm",
       "match": {
-        "hdr.ipv4.dstAddr": ["10.0.3.3", 32]
+        "hdr.ipv4.dstAddr": [
+          "10.0.3.3",
+          32
+        ]
       },
       "action_name": "MyIngress.ipv4_forward",
       "action_params": {
@@ -25,7 +28,10 @@
     {
       "table": "MyIngress.ipv4_lpm",
       "match": {
-        "hdr.ipv4.dstAddr": ["10.0.1.0", 24]
+        "hdr.ipv4.dstAddr": [
+          "10.0.1.0",
+          24
+        ]
       },
       "action_name": "MyIngress.ipv4_forward",
       "action_params": {
@@ -36,7 +42,10 @@
     {
       "table": "MyIngress.ipv4_lpm",
       "match": {
-        "hdr.ipv4.dstAddr": ["10.0.2.0", 24]
+        "hdr.ipv4.dstAddr": [
+          "10.0.2.0",
+          24
+        ]
       },
       "action_name": "MyIngress.ipv4_forward",
       "action_params": {
