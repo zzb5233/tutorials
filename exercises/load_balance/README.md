@@ -16,8 +16,8 @@ value to forward the packet to the selected host.
 ## Step 1: Run the (incomplete) starter code
 
 The directory with this README also contains a skeleton P4 program,
-`load_balance.p4`, which initially drops all packets.  Your job (in
-the next step) will be to extend it to properly forward packets.
+`load_balance.p4`, which initially sends all packets of the load balance IP to h2.
+Your job (in the next step) will be to extend it to properly forward packets.
 
 Before that, let's compile the incomplete `load_balance.p4` and bring
 up a switch in Mininet to test its behavior.
@@ -48,12 +48,11 @@ up a switch in Mininet to test its behavior.
    ```bash
    ./send.py 10.0.0.1 "P4 is cool"
    ```
-   The message will not be received.
 5. Type `exit` to leave each XTerm and the Mininet command line.
 
-The message was not received because each switch is programmed with
-`load_balance.p4`, which drops all packets on arrival.  Your job is to
-extend this file.
+The message will only be received by h2 because each switch is programmed 
+with `load_balance.p4`, which does not yet select between different switches.
+Your job is to extend this file.
 
 ### A note about the control plane
 
