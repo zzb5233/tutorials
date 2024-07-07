@@ -77,7 +77,7 @@ missing piece.
 
 First we have to change the ipv4_t header by splitting the TOS field
 into DiffServ and ECN fields.  Remember to update the checksum block
-accordingly.  Then, in the egress control block we must compare the
+accordingly.  Then, in the ingress control block we must compare the
 protocol in IP header with IP protocols. Based on the traffic classes
 and priority, the `diffserv` flag will be set.
 
