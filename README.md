@@ -159,7 +159,7 @@ particular branch of this repository.
 
 ## P4 Developer Day, April 2019
 
-You can find more information about the P4 Developer Day held in April 2019 [here](https://p4.org/events/2019-04-30-p4-developer-day/)
+You can find more information about the P4 Developer Day held in April 2019 [here](https://p4.org/p4-developer-day-2019/)
 
 Both a beginner and advanced class were taught at this event.  The
 page linked above contains instructions to download and install a
@@ -170,3 +170,6 @@ pre-built Linux VM that was used during the classes.
 
 This [link](https://www.youtube.com/watch?v=3DJeqS_dl_o&list=PLf7HGRMAlJBzGC58GcYpimyIs7D0nuSoo) plays the first welcome video of a 
 series of 6 videos of tutorials given at this event.
+
+More information about this event can be found
+[here](https://p4.org/p4-developer-day-fall-2017/).
