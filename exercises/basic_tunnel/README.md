@@ -112,7 +112,7 @@ to hosts. For this step you will need to add your forwarding rules to the
   ./send.py 10.0.2.2 "P4 is cool"
   ```
   The packet should be received at `h2`. If you examine the received packet
-  you should see that is consists of an Ethernet header, an IP header, a TCP
+  you should see that it consists of an Ethernet header, an IP header, a TCP
   header, and the message. If you change the destination IP address (e.g. try
   to send to `10.0.3.3`) then the message should not be received by `h2`, and
   will instead be received by `h3`.
