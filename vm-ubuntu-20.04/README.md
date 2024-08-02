@@ -129,7 +129,7 @@ cd build
 make -j2 check |& tee make-check-out.txt
 ```
 
-As of 2023-07-01, the p4c compiler passes all of its included tests,
+As of 2024-08-01, the p4c compiler passes all of its included tests,
 except for some of the p4testgen tests (if those are enabled).
 
 
@@ -169,8 +169,8 @@ them again.
 
 For the particular case of creating the VM named:
 
-+ 'P4 Tutorial Development 2023-07-01'
-+ created on July 1, 2023
++ 'P4 Tutorial Development 2024-08-01'
++ created on August 1, 2024
 
 here were the host OS details, in case it turns out that matters to
 the finished VM image for some reason:
@@ -182,7 +182,7 @@ the finished VM image for some reason:
 In the VirtualBox GUI interface:
 
 + Choose menu item File -> Export Appliance ...
-+ Select the VM named 'P4 Tutorial Development 2023-07-01' and click
++ Select the VM named 'P4 Tutorial Development 2024-08-01' and click
   Continue button
 
 + Format
@@ -191,7 +191,7 @@ In the VirtualBox GUI interface:
     + Open Virtualization Format 0.9
     + Open Virtualization Format 2.0
 + Target file
-  + I used: /Users/andy/Documents/P4 Tutorials Development 2023-07-01.ova
+  + I used: /Users/andy/Documents/P4 Tutorials Development 2024-08-01.ova
 + Mac Address Policy
   + I used: Include only NAT network adapter MAC addresses
   + Other available options were:
@@ -205,16 +205,16 @@ Clicked "Continue" button.
 
 Virtual system settings:
 
-+ Name: P4 Tutorial 2023-07-01
++ Name: P4 Tutorial 2024-08-01
 + Product: I left this blank
 + Product-URL: I left this blank
 + Vendor: P4.org - P4 Language Consortium
 + Vendor-URL: https://p4.org
-+ Version: 2023-07-01
++ Version: 2024-08-01
 + Description:
 
 ```
-Open source P4 development tools built from latest source code as of 2023-Jul-01 and packaged into an Ubuntu 20.04 Desktop Linux VM for the AMD64 architecture.
+Open source P4 development tools built from latest source code as of 2024-Aug-01 and packaged into an Ubuntu 20.04 Desktop Linux VM for the AMD64 architecture.
 ```
 
 + License
