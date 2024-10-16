@@ -1,6 +1,6 @@
 {
   "target": "bmv2",
-  "p4info": "build/qos.p4.p4info.txt",
+  "p4info": "build/qos.p4.p4info.txtpb",
   "bmv2_json": "build/qos.json",
   "table_entries": [
     {

@@ -1,6 +1,6 @@
 {
   "target": "bmv2",
-  "p4info": "build/basic_tunnel.p4.p4info.txt",
+  "p4info": "build/basic_tunnel.p4.p4info.txtpb",
   "bmv2_json": "build/basic_tunnel.json",
   "table_entries": [
     {

@@ -88,7 +88,7 @@ packet-processing rules in the tables of each switch. These are defined in the
 **Important:** We use P4Runtime to install the control plane rules. The
 content of files `sX-runtime.json` refer to specific names of tables, keys, and
 actions, as defined in the P4Info file produced by the compiler (look for the
-file `build/basic.p4.p4info.txt` after executing `make run`). Any changes in the P4
+file `build/basic.p4.p4info.txtpb` after executing `make run`). Any changes in the P4
 program that add or rename tables, keys, or actions will need to be reflected in
 these `sX-runtime.json` files.
 

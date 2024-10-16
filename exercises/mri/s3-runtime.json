@@ -1,6 +1,6 @@
 {
   "target": "bmv2",
-  "p4info": "build/mri.p4.p4info.txt",
+  "p4info": "build/mri.p4.p4info.txtpb",
   "bmv2_json": "build/mri.json",
   "table_entries": [
     {

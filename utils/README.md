@@ -96,7 +96,7 @@ In the example, since there is only one table in the data-plane counterpart, all
 ```json
 {
   "target": "bmv2",
-  "p4info": "build/basic.p4.p4info.txt",
+  "p4info": "build/basic.p4.p4info.txtpb",
   "bmv2_json": "build/basic.json",
   "table_entries": [
     {
