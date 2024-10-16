@@ -32,10 +32,10 @@ endif
 all: run
 
 run: build
-	sudo PATH=$(PATH) ${P4GUIDE_SUDO_OPTS} python3 $(RUN_SCRIPT) -t $(TOPO) $(run_args)
+	sudo python3 $(RUN_SCRIPT) -t $(TOPO) $(run_args)
 
 stop:
-	sudo PATH=$(PATH) `which mn` -c
+	sudo mn -c
 
 build: dirs $(compiled_json)
 
