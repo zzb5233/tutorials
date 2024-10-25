@@ -106,11 +106,11 @@ virtual machine or install several dependencies.
 3. Navigate to the cloned directory :
    
    ```
-   cd vm-ubuntu-20.04
+   cd vm-ubuntu-24.04
    ```
 4. Start the virtual machine using Vagrant:
    ```
-   vagrant up
+   vagrant up dev
    ```
    *Note* : The time for this step depends on your computer and Internet speed. On a 2015 MacBook Pro with a 50 Mbps download speed, it took approximately 20 minutes. Ensure a stable Internet connection throughout the process.
 

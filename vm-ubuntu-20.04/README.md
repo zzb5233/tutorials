@@ -1,5 +1,15 @@
 # Creating the VM
 
+This directory is here only for historical reference.  The scripts
+here _might_ still be useful for creating a VM image based on Ubuntu
+20.04 Linux, but they are not regularly tested by anyone, so might not
+produce a working system.
+
+See the `vm-ubuntu-24.04` [directory](../vm-ubuntu-24.04) for similar
+scripts that can be used to create a VM image based on Ubuntu 24.04
+Linux.
+
+
 + Below are the steps to create a brand new VM using Vagrant:
   + Install [Vagrant](https://developer.hashicorp.com/vagrant/docs/installation) on your system if it's not already installed.
   + In a shell/terminal window, change to this `vm-ubuntu-20.04`
