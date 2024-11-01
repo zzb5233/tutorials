@@ -15,10 +15,10 @@ change_owner_and_group_of_venv_lib_python3_files() {
 set -xe
 
 #Src
-BMV2_COMMIT="199af48e04ea8747f8296bdc51c2ce16bb96cb04"  # 2024-Oct-15
-PI_COMMIT="5eae9c84d7a55f9554775e498b9146f67eac7bd4"    # 2024-Oct-15
-P4C_COMMIT="9fcd7d5985f22ae6ff437a30dfb613a1347d8079"   # 2024-Oct-15
-PTF_COMMIT="c554f83685186be4cfa9387eb5d6d700d2bbd7c0"   # 2024-Oct-15
+BMV2_COMMIT="28b736caabca7a4c9ff23e3b947354bd55191372"  # 2024-Nov-01
+PI_COMMIT="2bb40f7ab800b91b26f3aed174bbbfc739a37ffa"    # 2024-Nov-01
+P4C_COMMIT="09b4e63270dd2a7e44fcaaadfb92f7ca543f9880"   # 2024-Nov-01
+PTF_COMMIT="c554f83685186be4cfa9387eb5d6d700d2bbd7c0"   # 2024-Nov-01
 
 # Versions installed by Ubuntu apt
 PROTOBUF_PKG_VERSION="3.21.12"
