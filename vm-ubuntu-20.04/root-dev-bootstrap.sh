@@ -109,7 +109,7 @@ sudo pip3 install protobuf==3.18.1
 # Starting in 2019-Nov, Python3 version of Scapy is needed for `cd
 # p4c/build ; make check` to succeed.
 # ply package is needed for ebpf and ubpf backend tests to pass
-sudo pip3 install scapy ply
+sudo pip3 install scapy==2.5.0 ply
 
 # Things needed for PTF
 sudo pip3 install pypcap

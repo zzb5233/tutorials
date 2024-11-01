@@ -131,7 +131,7 @@ git checkout ${P4C_COMMIT}
 git submodule update --init --recursive
 mkdir -p build
 cd build
-cmake .. -DENABLE_TEST_TOOLS=ON
+cmake .. -DCMAKE_BUILD_TYPE=Release -DENABLE_TEST_TOOLS=ON
 # -j3 assumes 6+ GB of RAM and 3+ vCPUs in VM
 make -j3
 sudo make install/strip

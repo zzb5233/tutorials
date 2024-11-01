@@ -203,7 +203,7 @@ git checkout ${P4C_COMMIT}
 git submodule update --init --recursive
 mkdir -p build
 cd build
-cmake .. -DENABLE_TEST_TOOLS=ON
+cmake .. -DCMAKE_BUILD_TYPE=Release -DENABLE_TEST_TOOLS=ON
 # The command 'make -j${NUM_CORES}' works fine for the others, but
 # with 2 GB of RAM for the VM, there are parts of the p4c build where
 # running 2 simultaneous C++ compiler runs requires more than that
