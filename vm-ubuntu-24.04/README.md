@@ -32,6 +32,16 @@ depending upon the speed of your computer and Internet connection.
 
 ## GUI settings that you will likely wish to change
 
+By default when creating a VM with these instructions, the GUI desktop
+installed is called [LXQt](https://lxqt-project.org).  The
+instructions below are some modifications of settings that you may
+find useful in changing the appearance of icons and the desktop
+background.
+
+If you are more familiar with the default Ubuntu Linux [GNOME
+desktop](https://www.gnome.org), you can install it with instructions
+in the next section.
+
 + Log in as user p4 (password p4)
 + Start menu -> Preferences -> LXQt settings -> Monitor settings
   + Change resolution from initial 800x600 to 1024x768.  Apply the changes.
@@ -80,3 +90,46 @@ depending upon the speed of your computer and Internet connection.
     which removes several GigaBytes of files created while building
     the projects.
 + Log off
+
+
+## Changing to use the GNOME desktop
+
+Create a terminal and enter the command below.  It will download and
+install hundreds of megabytes of packages, so may take a while.
+
+```bash
+sudo apt-get install ubuntu-desktop-minimal
+```
+
+Now reboot the system.
+
+Note that a system installed this way usually ends up with two
+different system services running on it that check the status of
+network interfaces, which can significantly increase the boot time,
+e.g. by 2 minutes.
+
++ https://askubuntu.com/questions/1217252/boot-process-hangs-at-systemd-networkd-wait-online/1501504#1501504
+
+Run these commands in a terminal:
+
+```bash
+$ systemctl is-enabled NetworkManager-wait-online.service systemd-networkd-wait-online.service
+enabled
+enabled
+
+$ systemctl is-enabled NetworkManager.service systemd-networkd.service
+enabled
+enabled
+```
+
+If you see the output shown above, you can run the command below to
+disable the service intended for use in managing network interfaces on
+Ubuntu server:
+
+```bash
+$ sudo systemctl disable systemd-networkd.service
+[sudo] password for andy:
+Removed /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service.
+Removed /etc/systemd/system/sockets.target.wants/systemd-networkd.socket.
+Removed /etc/systemd/system/multi-user.target.wants/systemd-networkd.service.
+```
