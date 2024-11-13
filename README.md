@@ -84,10 +84,28 @@ then we've already provided you with a virtual machine that has all of
 the required software installed. Ask an instructor for a USB stick with
 the VM image.
 
-Otherwise, to complete the [exercises](https://github.com/p4lang/tutorials/tree/master/exercises), you will need to either build a
-virtual machine or install several dependencies.
+Otherwise, to complete the
+[exercises](https://github.com/p4lang/tutorials/tree/master/exercises),
+you will need to do one of the following:
 
-### To build the virtual machine
++ Download and run a virtual machine with the P4 development tools
+  already installed.
++ Build a virtual machine, compiling and installing the P4 development
+  tools within it.
++ Install the P4 development tools on an existing system with a
+  supported version of Ubuntu Linux.
+
+### Download a virtual machine with the P4 development tools already installed
+
+You will need a system with a 64-bit Intel/AMD processor architecture,
+with [VirtualBox](https://virtualbox.org) installed on it.  See the
+table
+[here](https://github.com/jafingerhut/p4-guide/blob/master/bin/README-install-troubleshooting.md)
+for a list of virtual machine images that you can download, then use
+VirtualBox's File->Import Appliance menu item to add the virtual
+machine to those on your system.
+
+### To build a virtual machine with the P4 development tools.
 
 #### Requirements
 
@@ -99,12 +117,10 @@ virtual machine or install several dependencies.
 
 1. Install Vagrant and VirtualBox on your system.
 2. Clone the repository
-   
    ```
    git clone https://github.com/p4lang/tutorials.git
    ```
 3. Navigate to the cloned directory :
-   
    ```
    cd vm-ubuntu-24.04
    ```
@@ -112,10 +128,9 @@ virtual machine or install several dependencies.
    ```
    vagrant up dev
    ```
-   *Note* : The time for this step depends on your computer and Internet speed. On a 2015 MacBook Pro with a 50 Mbps download speed, it took approximately 20 minutes. Ensure a stable Internet connection throughout the process.
+   *Note* : The time for this step depends on your computer and Internet speed. On a 2019 Intel MacBook Pro with a 1 Gbps download speed, it took approximately 2 hours. Ensure a stable Internet connection throughout the process.
 
 ### Accessing the VM
-
 
 - There are two user accounts:
   - Username: vagrant | Password: vagrant (This is the default account)
@@ -125,10 +140,9 @@ virtual machine or install several dependencies.
 
 You will need the script to execute to completion before you can see the `p4` login on your virtual machine's GUI. In some cases, the `vagrant up` command brings up only the default `vagrant` login with the password `vagrant`. Dependencies may or may not have been installed for you to proceed with running P4 programs. Please refer the [existing issues](https://github.com/p4lang/tutorials/issues) to help fix your problem or create a new one if your specific problem isn't addressed there.
 
-
 ### To install P4 development tools on an existing system
 
-There are instructions and scripts in another Github repository that can, starting from a freshly installed Ubuntu 20.04 or 22.04 Linux system with enough RAM and free disk space, install all of the necessary P4 development tools to run the exercises in this repository.  You can find those instructions and scripts [here](https://github.com/jafingerhut/p4-guide/blob/master/bin/README-install-troubleshooting.md) (note that you must clone a copy of that entire repository in order for its install scripts to work).
+There are instructions and scripts in another Github repository that can, starting from a freshly installed Ubuntu 20.04, 22.04, or 24.04 Linux system with enough RAM and free disk space, install all of the necessary P4 development tools to run the exercises in this repository.  You can find those instructions and scripts [here](https://github.com/jafingerhut/p4-guide/blob/master/bin/README-install-troubleshooting.md) (note that you must clone a copy of that entire repository in order for its install scripts to work).
 
 # How to Contribute
 
