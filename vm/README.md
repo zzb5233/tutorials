@@ -1,3 +1,6 @@
+
+[comment]: # (SPDX-License-Identifier:  Apache-2.0)
+
 # Introduction
 
 This directory is here only for historical reference.  The scripts

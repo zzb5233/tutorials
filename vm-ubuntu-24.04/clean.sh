@@ -1,4 +1,5 @@
 #! /bin/bash
+# SPDX-License-Identifier: Apache-2.0
 
 # To reduce disk space used by the virtual machine, delete many build
 # files created during execution of install scripts.

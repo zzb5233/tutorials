@@ -1,3 +1,6 @@
+
+[comment]: # (SPDX-License-Identifier:  Apache-2.0)
+
 # Introduction
 
 Known minor issues that anyone who knows how to fix is welcome to

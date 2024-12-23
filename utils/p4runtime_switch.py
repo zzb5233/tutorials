@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 # Copyright 2017-present Barefoot Networks, Inc.
 # Copyright 2017-present Open Networking Foundation
 #

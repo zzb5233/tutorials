@@ -1,3 +1,6 @@
+
+[comment]: # (SPDX-License-Identifier:  Apache-2.0)
+
 # Implementing a P4 Calculator
 
 ## Introduction

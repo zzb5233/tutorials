@@ -1,3 +1,4 @@
+" SPDX-License-Identifier: Apache-2.0
 " Vim syntax file
 " Language: P4_16
 " Maintainer: Antonin Bas, Barefoot Networks Inc

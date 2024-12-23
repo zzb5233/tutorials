@@ -1,4 +1,5 @@
 #!/bin/bash
+# SPDX-License-Identifier: Apache-2.0
 
 change_owner_and_group_of_venv_lib_python3_files() {
     local venv

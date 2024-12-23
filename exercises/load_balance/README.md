@@ -1,3 +1,6 @@
+
+[comment]: # (SPDX-License-Identifier:  Apache-2.0)
+
 # Load Balancing
 
 In this exercise, you will implement a form of load balancing based on
